@@ -255,20 +255,19 @@ ul  { list-style: none; }
    HERO -- diagonal split screen
    ================================================================ */
 
-/* Mobile-first: stacked */
+/* Mobile: stacked, photo on top then coral content below */
 .hero {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
 }
 
-/* Photo panel */
 .hero__photo {
   position: relative;
   overflow: hidden;
-  height: 55vw;
-  min-height: 280px;
-  max-height: 420px;
+  width: 100%;
+  height: 56vw;
+  min-height: 260px;
+  max-height: 400px;
   flex-shrink: 0;
 }
 .hero__photo img {
@@ -279,29 +278,27 @@ ul  { list-style: none; }
   display: block;
 }
 
-/* Coral content panel */
 .hero__coral {
   background: var(--coral);
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 36px 24px 48px;
+  padding: 40px 28px 52px;
 }
 .hero__coral-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 18px;
+  gap: 20px;
   width: 100%;
   max-width: 420px;
 }
 
-/* Logo badge in the coral panel */
+/* Logo badge */
 .hero__logo-wrap {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   background: var(--white);
   display: flex;
@@ -323,6 +320,7 @@ ul  { list-style: none; }
   display: flex;
   flex-direction: column;
   width: 100%;
+  align-items: center;
 }
 .hero__location {
   display: block;
@@ -337,7 +335,7 @@ ul  { list-style: none; }
 .hero__headline {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 40px;
+  font-size: 38px;
   color: var(--white);
   line-height: 1.05;
   margin-bottom: 12px;
@@ -349,7 +347,7 @@ ul  { list-style: none; }
   color: rgba(255,255,255,0.88);
   line-height: 1.65;
   margin-bottom: 24px;
-  max-width: 380px;
+  max-width: 360px;
 }
 .hero__ctas {
   display: flex;
@@ -401,41 +399,47 @@ ul  { list-style: none; }
   border-color: var(--white);
 }
 
-/* Desktop: side-by-side with diagonal photo */
+/* ----------------------------------------------------------------
+   Desktop: side-by-side flexbox row
+   Photo on left (60% wide, diagonal clip), coral on right (flex:1).
+   .hero background is coral so the clipped gap area is seamless.
+   ---------------------------------------------------------------- */
 @media (min-width: 768px) {
   .hero {
-    display: block;
-    position: relative;
-    height: 100dvh;
-    min-height: 620px;
-    overflow: hidden;
+    flex-direction: row;
+    min-height: 100dvh;
+    background: var(--coral); /* fills the diagonal gap area */
   }
 
-  /* Photo fills left 62%, diagonal cut on right edge */
+  /* Photo: 60% wide, diagonal clip on right edge, overlaps coral by ~72px */
   .hero__photo {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 62%;
-    height: 100%;
+    width: 60%;
+    height: auto;
+    min-height: 100dvh;
     max-height: none;
+    flex-shrink: 0;
     clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+    margin-right: -72px; /* photo visually overlaps coral; coral bg fills the gap */
     z-index: 2;
   }
 
-  /* Coral panel fills right side */
+  /* Coral panel: flex 1, full-height via flexbox stretch, scrollable if short screen */
   .hero__coral {
-    position: absolute;
-    right: 0; top: 0; bottom: 0;
-    width: 50%;
-    padding: 64px 56px;
-    align-items: center;
+    flex: 1;
+    min-height: 100dvh;
+    padding: 60px 52px 60px 96px; /* left pad clears the photo overlap zone */
+    align-items: flex-start;
     justify-content: center;
-    z-index: 1;
+    overflow-y: auto;
   }
   .hero__coral-inner {
-    gap: 28px;
-    max-width: 380px;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
+    gap: 24px;
+    max-width: 360px;
+  }
+  .hero__text {
+    align-items: flex-start;
   }
   .hero__logo-wrap {
     width: 160px;
@@ -443,17 +447,26 @@ ul  { list-style: none; }
     padding: 10px;
   }
   .hero__headline {
-    font-size: 60px;
+    font-size: 54px;
   }
   .hero__subhead {
-    font-size: 18px;
+    font-size: 17px;
+    max-width: 320px;
+  }
+  .hero__ctas {
+    justify-content: flex-start;
   }
 }
 
-@media (min-width: 1200px) {
-  .hero__headline { font-size: 72px; }
-  .hero__coral { padding: 64px 72px; }
-  .hero__logo-wrap { width: 190px; height: 190px; }
+@media (min-width: 1100px) {
+  .hero__headline { font-size: 64px; }
+  .hero__logo-wrap { width: 180px; height: 180px; }
+  .hero__coral { padding: 60px 64px 60px 104px; }
+}
+
+@media (min-width: 1400px) {
+  .hero__headline { font-size: 76px; }
+  .hero__logo-wrap { width: 200px; height: 200px; }
 }
 
 /* ================================================================
