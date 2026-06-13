@@ -3,174 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery | Bottoms Up Yacht Club | Rocky Point, Mexico</title>
-  <meta name="description" content="Photos from inside Bottoms Up Yacht Club in Puerto Penasco. The patio at night, the bar at full swing, the food worth ordering twice.">
+  <title>Gallery - Bottom's Up Yacht Club | Puerto Penasco, Mexico</title>
+  <meta name="description" content="Photos from inside Bottom's Up Yacht Club in Rocky Point -- the patio, the bar, the food, the people. No filters, no staging, just the place.">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Gallery - Bottom's Up Yacht Club">
+  <meta property="og:description" content="Photos from inside Bottom's Up Yacht Club -- no filters, no staging, just the place.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/atmosphere_1.jpg">
   <meta property="og:url" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/gallery.html">
-  <meta property="og:title" content="Gallery | Bottoms Up Yacht Club">
-  <meta property="og:description" content="The patio at night. The bar at full swing. The food worth ordering twice. No filters, no staging, just the place.">
-  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/interior_4.jpg">
+  <meta property="og:type" content="website">
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="Bottoms Up Yacht Club home">
-        <img src="assets/logo.jpg" alt="" class="nav__logo" aria-hidden="true">
-        <span class="nav__name">Bottom's Up Yacht Club</span>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="Bottom's Up Yacht Club home">
+        <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club logo">
+        <span class="nav-brand-name">Bottom's Up Yacht Club</span>
       </a>
-
-      <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#events">Events</a></li>
-        <li><a href="index.html#the-bar">The Bar</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html">Find Us</a></li>
-        <li class="nav-cta"><a href="find-us.html#contact" class="btn btn--primary">Book a Party</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="find-us.html">Find Us</a></li>
+          <li class="nav-mobile-cta"><a href="find-us.html" class="btn-nav-cta">Find Us</a></li>
+        </ul>
+        <a href="find-us.html" class="btn-nav-cta nav-cta-desktop">Find Us</a>
+        <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ── PAGE HERO ─────────────────────────────────────── -->
-  <header class="page-hero" role="banner">
-    <div class="container">
-      <span class="page-hero__label">Gallery</span>
-      <h1 class="page-hero__heading">The place in photos.</h1>
-      <p class="page-hero__sub">The patio at night. The bar at full swing. The food worth ordering twice.</p>
-    </div>
+  <!-- PAGE HERO -->
+  <header class="page-hero page-hero--sand" aria-label="Gallery page header">
+    <h1>No filters, no staging, just the place.</h1>
+    <p>The patio at night. The bar at full swing. The food worth ordering twice.</p>
   </header>
 
-  <!-- ── GALLERY ────────────────────────────────────────── -->
-  <section id="gallery-section" class="section section--dark" aria-label="Photo gallery">
-    <div class="container">
-      <div class="gallery__intro appear">
-        <p>Photos from inside Bottoms Up -- no filters, no staging, just the place.</p>
-      </div>
+  <!-- GALLERY GRID -->
+  <section class="section section--white" aria-label="Photo gallery">
+    <div class="section__inner">
+      <div class="gallery-grid">
 
-      <div class="gallery__grid">
+        <figure class="gallery-item appear">
+          <img src="assets/atmosphere_1.jpg" alt="Group of friends laughing at the bar" loading="lazy">
+          <figcaption class="gallery-caption">The Bar</figcaption>
+        </figure>
 
-        <div class="gallery__item appear appear--delay-1">
-          <img
-            src="assets/interior_4.jpg"
-            alt="Bottoms Up Yacht Club interior collage: night patio with blue-purple uplighting and string lights, bar area with happy hour neon, guests at the bar, bartender with chess board"
-            loading="lazy"
-          >
-        </div>
+        <figure class="gallery-item appear">
+          <img src="assets/staff_2.jpg" alt="Danny pouring drinks behind the brick bar" loading="lazy">
+          <figcaption class="gallery-caption">Danny at the Bar</figcaption>
+        </figure>
 
-        <div class="gallery__item appear appear--delay-2">
-          <img
-            src="assets/staff_2.jpg"
-            alt="Danny Davis behind the brick bar at Bottoms Up Yacht Club, arms raised, pouring drinks with the Puerto Penasco harbor mural behind him"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery__item appear appear--delay-3">
-          <img
-            src="assets/atmosphere_1.jpg"
-            alt="Group of guests smiling at the bar counter at Bottoms Up Yacht Club with the Locals Only Pool Room visible behind them"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery__item appear appear--delay-1">
-          <img
-            src="assets/interior_1.jpg"
-            alt="Bottoms Up Yacht Club collage: colorful bunting in dining room, bar area with holiday decorations, dramatic drink pour, outdoor patio with blue cushions"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery__item appear appear--delay-2">
+        <figure class="gallery-item appear">
           <img
             src="assets/interior_2.jpg"
-            alt="Bottoms Up Yacht Club collage: guests laughing on patio, blue cushion outdoor sofa by stone fountain, pergola seating area, bar from guest view"
+            alt="Outdoor patio with blue cushioned sofas"
+            style="object-fit: cover; object-position: top right;"
             loading="lazy"
           >
-        </div>
+          <figcaption class="gallery-caption">The Patio</figcaption>
+        </figure>
 
-        <div class="gallery__item appear appear--delay-3">
+        <figure class="gallery-item appear">
+          <img
+            src="assets/interior_4.jpg"
+            alt="Night patio with string lights and blue-lit palms"
+            style="object-fit: cover; object-position: bottom right;"
+            loading="lazy"
+          >
+          <figcaption class="gallery-caption">Patio at Night</figcaption>
+        </figure>
+
+        <figure class="gallery-item appear">
           <img
             src="assets/interior_3.jpg"
-            alt="Bottoms Up Yacht Club collage: guests in costume masks, catering setup, smiling bartender, busy full-house dinner scene"
+            alt="Smiling bartender behind the bar"
+            style="object-fit: cover; object-position: center bottom;"
             loading="lazy"
           >
-        </div>
+          <figcaption class="gallery-caption">The Staff</figcaption>
+        </figure>
 
-        <div class="gallery__item appear appear--delay-1">
+        <figure class="gallery-item appear">
           <img
             src="assets/interior_5.jpg"
-            alt="Bottoms Up Yacht Club collage: Locals Only Pool Room with billiard table, couple at bar with Bottoms Up sign, pozole bowl, burrito with sauce"
+            alt="Locals Only Pool Room with billiard table"
+            style="object-fit: cover; object-position: top left;"
             loading="lazy"
           >
-        </div>
+          <figcaption class="gallery-caption">Pool Room</figcaption>
+        </figure>
 
-        <div class="gallery__item appear appear--delay-2">
+        <figure class="gallery-item appear">
+          <img src="assets/event_1.jpg" alt="Birthday party celebration in the patio room" loading="lazy">
+          <figcaption class="gallery-caption">Events</figcaption>
+        </figure>
+
+        <figure class="gallery-item appear">
           <img
             src="assets/dish_1.jpg"
-            alt="Bottoms Up food collage: guest smiling at table, loaded nachos with eggs and red salsa, burrito on checkered paper, sandwich with fries"
+            alt="Loaded nachos with eggs and red salsa"
+            style="object-fit: cover; object-position: 0% 100%;"
             loading="lazy"
           >
-        </div>
+          <figcaption class="gallery-caption">Nachos</figcaption>
+        </figure>
 
-        <div class="gallery__item appear appear--delay-3">
+        <figure class="gallery-item appear">
           <img
             src="assets/dish_2.jpg"
-            alt="Bottoms Up food collage: club sandwich with fries, rice bowl with cream sauce, woman with dog at dining table, birthday celebration dinner"
+            alt="Club sandwich basket with fries"
+            style="object-fit: cover; object-position: 0% 0%;"
             loading="lazy"
           >
-        </div>
-
-        <div class="gallery__item appear appear--delay-1">
-          <img
-            src="assets/staff_1.jpg"
-            alt="Danny Davis and a staff member outdoors at Bottoms Up Yacht Club, bright desert sky and palm trees in the background"
-            loading="lazy"
-          >
-        </div>
-
-        <div class="gallery__item appear appear--delay-2">
-          <img
-            src="assets/event_1.jpg"
-            alt="Birthday party celebration at Bottoms Up Yacht Club with Feliz Cumpleanos banner and Welcome to the Patio wall mural"
-            loading="lazy"
-          >
-        </div>
+          <figcaption class="gallery-caption">Club Sandwich</figcaption>
+        </figure>
 
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
-  <footer id="footer" role="contentinfo">
-    <div class="container">
-      <img src="assets/logo.jpg" alt="Bottoms Up Yacht Club circular badge logo" class="footer__logo" loading="lazy">
-      <p class="footer__name">Bottom's Up Yacht Club</p>
-      <p class="footer__tagline">Your neighborhood bar in Mexico.</p>
-      <p class="footer__hours">Open daily. Mon&ndash;Thu 10 AM&ndash;10 PM. Fri&ndash;Sat 10 AM&ndash;11 PM.</p>
-      <p class="footer__contact"><a href="tel:+526386881617">638 688 1617</a></p>
-      <p class="footer__address">Av. Chihuahua 141, Puerto Pe&ntilde;asco, Son.</p>
-      <div class="footer__social">
-        <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener noreferrer">Facebook: BottomsUPYachtClub</a>
-      </div>
-      <div class="footer__divider" aria-hidden="true"></div>
-      <p class="footer__meta">
-        Opened September 1, 2023 &middot; Puerto Pe&ntilde;asco, Mexico<br>
-        &copy; 2024 Bottom's Up Yacht Club<br>
-        <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">Site by NeonFrame Web Design</a>
-      </p>
+  <!-- CORAL CTA BAND -->
+  <section class="section--coral" aria-label="Find us">
+    <div class="cta-band appear">
+      <h2>We're at Av. Chihuahua 141 in the Mirador neighborhood.</h2>
+      <p>Easy to find. Hard to leave.</p>
+      <a href="find-us.html" class="btn-cta-band">Find Us</a>
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club" class="footer-logo">
+    <p class="footer-name">Bottom's Up Yacht Club</p>
+    <p class="footer-tagline">Your neighborhood bar in Mexico.</p>
+    <p class="footer-hours">Open daily. Mon-Thu 10 AM-10 PM. Fri-Sat 10 AM-11 PM.</p>
+    <p class="footer-phone"><a href="tel:+526386881617">638 688 1617</a></p>
+    <p class="footer-address">Av. Chihuahua 141, Puerto Penasco, Son.</p>
+    <p class="footer-social"><a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener">Facebook: BottomsUPYachtClub</a></p>
+    <hr class="footer-divider" aria-hidden="true">
+    <p class="footer-legal">
+      &copy; 2025 Bottom's Up Yacht Club<br>
+      <a href="https://neonframewebdesign.com" target="_blank" rel="noopener">Site by NeonFrame Web Design</a>
+    </p>
   </footer>
 
   <script src="js/main.js"></script>

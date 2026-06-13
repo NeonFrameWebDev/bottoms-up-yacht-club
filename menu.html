@@ -3,225 +3,236 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu | Bottoms Up Yacht Club | Rocky Point, Mexico</title>
-  <meta name="description" content="Drinks and bar bites at Bottoms Up Yacht Club in Puerto Penasco. Bloody Marys, mimosas, egg roll special, nachos, and more. Open 7 days.">
+  <title>Menu - Bottom's Up Yacht Club | Puerto Penasco, Mexico</title>
+  <meta name="description" content="Bloody Marys, mimosas, cocktails, nachos, egg roll specials, and more. What we're pouring and what we're plating at Bottom's Up Yacht Club in Rocky Point.">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Menu - Bottom's Up Yacht Club">
+  <meta property="og:description" content="Questionable life choices. Decent food. That's kind of our whole thing. See the full menu at Bottom's Up Yacht Club in Puerto Penasco.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/atmosphere_1.jpg">
   <meta property="og:url" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/menu.html">
-  <meta property="og:title" content="Menu | Bottoms Up Yacht Club">
-  <meta property="og:description" content="Bloody Marys, mimosas, egg roll special, nachos, and more. Come hungry.">
-  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/interior_4.jpg">
+  <meta property="og:type" content="website">
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="Bottoms Up Yacht Club home">
-        <img src="assets/logo.jpg" alt="" class="nav__logo" aria-hidden="true">
-        <span class="nav__name">Bottom's Up Yacht Club</span>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="Bottom's Up Yacht Club home">
+        <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club logo">
+        <span class="nav-brand-name">Bottom's Up Yacht Club</span>
       </a>
-
-      <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#events">Events</a></li>
-        <li><a href="index.html#the-bar">The Bar</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html">Find Us</a></li>
-        <li class="nav-cta"><a href="find-us.html#contact" class="btn btn--primary">Book a Party</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="find-us.html">Find Us</a></li>
+          <li class="nav-mobile-cta"><a href="find-us.html" class="btn-nav-cta">Find Us</a></li>
+        </ul>
+        <a href="find-us.html" class="btn-nav-cta nav-cta-desktop">Find Us</a>
+        <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ── PAGE HERO ─────────────────────────────────────── -->
-  <header class="page-hero" role="banner">
-    <div class="container">
-      <span class="page-hero__label">On the Menu</span>
-      <h1 class="page-hero__heading">Questionable life choices. Decent food.</h1>
-      <p class="page-hero__sub">Below is what we're pouring and what we're plating. Come hungry.</p>
-    </div>
+  <!-- PAGE HERO -->
+  <header class="page-hero page-hero--sand" aria-label="Menu page header">
+    <span class="sub-label">Food + Drinks</span>
+    <h1>Questionable life choices. Decent food.</h1>
+    <p>That's kind of our whole thing. Below is what we're pouring and what we're plating. Come hungry.</p>
   </header>
 
-  <!-- ── DRINKS ─────────────────────────────────────────── -->
-  <section class="menu-section section--dark" aria-label="Drinks">
-    <div class="container">
-      <h2 class="menu-section__heading appear">Drinks</h2>
-      <div class="menu-items">
+  <!-- DRINKS SECTION -->
+  <section class="section section--white" aria-label="The bar">
+    <div class="section__inner">
+      <div class="menu-drinks-layout">
 
-        <div class="menu-item appear appear--delay-1">
-          <h3 class="menu-item__name">Bloody Mary</h3>
-          <p class="menu-item__desc">Our best seller. House-made, loaded, exactly what you need after a morning on the water.</p>
-          <span class="menu-item__flag">[Copy needed: specific garnish or mix detail -- confirm with Danny at pitch]</span>
+        <div class="appear">
+          <h2 class="menu-section-h2">The Bar</h2>
+          <ul class="drink-list">
+
+            <li class="drink-item">
+              <span class="drink-bullet" aria-hidden="true"></span>
+              <div class="drink-item-text">
+                <strong>Bloody Mary</strong>
+                <span>Our best seller. House-made, loaded, exactly what you need after a morning on the water.</span>
+              </div>
+            </li>
+
+            <li class="drink-item">
+              <span class="drink-bullet" aria-hidden="true"></span>
+              <div class="drink-item-text">
+                <strong>Mimosas</strong>
+                <span>Classic. Fresh. Goes with everything on this menu.</span>
+              </div>
+            </li>
+
+            <li class="drink-item">
+              <span class="drink-bullet" aria-hidden="true"></span>
+              <div class="drink-item-text">
+                <strong>Coffee Drinks</strong>
+                <span>Hot, iced, spiked. We open at 10 AM and the coffee drinks are why. <span class="copy-flag">[confirm open time with Danny at pitch]</span></span>
+              </div>
+            </li>
+
+            <li class="drink-item">
+              <span class="drink-bullet" aria-hidden="true"></span>
+              <div class="drink-item-text">
+                <strong>Cocktails</strong>
+                <span>Full bar. Everything made right. <span class="copy-flag">[house cocktail names to add at pitch]</span></span>
+              </div>
+            </li>
+
+            <li class="drink-item">
+              <span class="drink-bullet" aria-hidden="true"></span>
+              <div class="drink-item-text">
+                <strong>Beer and Seltzers</strong>
+                <span class="copy-flag">[confirm draft vs. bottle/can selection with Danny]</span>
+              </div>
+            </li>
+
+          </ul>
         </div>
 
-        <div class="menu-item appear appear--delay-2">
-          <h3 class="menu-item__name">Mimosas</h3>
-          <p class="menu-item__desc">Classic. Fresh. Goes with everything on this menu.</p>
-        </div>
-
-        <div class="menu-item appear appear--delay-3">
-          <h3 class="menu-item__name">Coffee Drinks</h3>
-          <p class="menu-item__desc">Hot, iced, spiked. We open early and the coffee drinks are why.</p>
-          <span class="menu-item__flag">[Copy needed: confirm open time 9 AM or 10 AM with Danny]</span>
-        </div>
-
-        <div class="menu-item appear appear--delay-4">
-          <h3 class="menu-item__name">Cocktails</h3>
-          <p class="menu-item__desc">Full bar. Everything made right.</p>
-          <span class="menu-item__flag">[Copy needed: 3-4 house cocktail names -- ask Danny at pitch]</span>
-        </div>
-
-        <div class="menu-item appear appear--delay-1">
-          <h3 class="menu-item__name">Beer and Seltzers</h3>
-          <p class="menu-item__desc">Cold and ready.</p>
-          <span class="menu-item__flag">[Copy needed: confirm draft vs. bottle/can selection with Danny]</span>
+        <div class="appear">
+          <img src="assets/interior_1.jpg" alt="Bartender pouring drinks at Bottom's Up Yacht Club" class="drinks-photo" loading="lazy">
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- ── FOOD ───────────────────────────────────────────── -->
-  <section class="menu-section section--warm" aria-label="Bar bites and food" style="background: var(--bg-warm);">
-    <div class="container">
-      <h2 class="menu-section__heading appear">Bar Bites and Food</h2>
-      <div class="menu-items">
+  <!-- HAPPY HOUR BAND -->
+  <section class="happy-hour-band" aria-label="Happy hour">
+    <div class="appear">
+      <h2>Swing by your neighborhood bar in Mexico.</h2>
+      <p>[copy needed: happy hour days, times, and any specials -- confirm with Danny at pitch]</p>
+    </div>
+  </section>
 
-        <div class="menu-item appear appear--delay-1">
-          <h3 class="menu-item__name">Egg Roll Special</h3>
-          <p class="menu-item__desc">Daily. Our single best-selling food item. Order one. You'll understand.</p>
-          <span class="menu-item__flag">[Copy needed: filling and sauce -- confirm with Danny]</span>
+  <!-- FOOD SECTION -->
+  <section class="section section--sand" aria-label="Bar bites and food">
+    <div class="section__inner">
+      <h2 class="menu-section-h2 appear">Bar Bites and Food</h2>
+
+      <div class="food-grid">
+
+        <div class="food-card appear">
+          <strong>Egg Roll Special</strong>
+          <span>Daily. Our single best-selling food item. Order one. You'll understand.</span>
         </div>
 
-        <div class="menu-item appear appear--delay-2">
-          <h3 class="menu-item__name">Hamburgers</h3>
-          <p class="menu-item__desc">Honest burger. Done right.</p>
-          <span class="menu-item__flag">[Copy needed: any build details or name]</span>
+        <div class="food-card appear">
+          <strong>Hamburgers</strong>
+          <span>Honest burger. Done right.</span>
         </div>
 
-        <div class="menu-item appear appear--delay-3">
-          <h3 class="menu-item__name">Nachos</h3>
-          <p class="menu-item__desc">Loaded. The real kind.</p>
-          <span class="menu-item__flag">[Copy needed: toppings -- from photo evidence: eggs and red salsa visible]</span>
+        <div class="food-card appear">
+          <strong>Nachos</strong>
+          <span>Loaded. The real kind.</span>
         </div>
 
-        <div class="menu-item appear appear--delay-4">
-          <h3 class="menu-item__name">Burritos</h3>
-          <p class="menu-item__desc">A full meal in every wrap.</p>
-          <span class="menu-item__flag">[Copy needed: filling options]</span>
+        <div class="food-card appear">
+          <strong>Burritos</strong>
+          <span class="copy-flag">[filling options to confirm with Danny]</span>
         </div>
 
-        <div class="menu-item appear appear--delay-1">
-          <h3 class="menu-item__name">Club Sandwich</h3>
-          <p class="menu-item__desc">Stacked and served right.</p>
-          <span class="menu-item__flag">[Copy needed: any build details]</span>
+        <div class="food-card appear">
+          <strong>Club Sandwich</strong>
+          <span>Classic build, done well.</span>
         </div>
 
-        <div class="menu-item appear appear--delay-2">
-          <h3 class="menu-item__name">Pozole</h3>
-          <p class="menu-item__desc">Homestyle. The bowl in the photos says it all.</p>
-          <span class="menu-item__flag">[Copy needed: confirm broth color and availability -- regular or weekend only]</span>
+        <div class="food-card appear">
+          <strong>Pozole</strong>
+          <span>Homestyle. The bowl in the photos says it all.</span>
         </div>
 
       </div>
 
-      <!-- Food photos -->
-      <div class="menu-preview__photos" style="margin-top: 40px;">
-        <div class="menu-preview__photo-item appear appear--delay-1">
-          <img
-            src="assets/dish_1.jpg"
-            alt="Loaded nachos with eggs and red salsa at Bottoms Up Yacht Club"
-            loading="lazy"
-            style="object-position: 100% 0%;"
-          >
-          <div class="menu-preview__photo-overlay" aria-hidden="true"></div>
-        </div>
-        <div class="menu-preview__photo-item appear appear--delay-2">
-          <img
-            src="assets/dish_2.jpg"
-            alt="Club sandwich basket with fries at Bottoms Up Yacht Club"
-            loading="lazy"
-            style="object-position: 0% 0%;"
-          >
-          <div class="menu-preview__photo-overlay" aria-hidden="true"></div>
-        </div>
+      <div class="food-photos-row appear">
+        <img
+          src="assets/dish_1.jpg"
+          alt="Loaded nachos with eggs and red salsa"
+          style="object-position: 0% 100%;"
+          loading="lazy"
+        >
+        <img
+          src="assets/dish_2.jpg"
+          alt="Club sandwich basket with fries"
+          style="object-position: 0% 0%;"
+          loading="lazy"
+        >
       </div>
     </div>
   </section>
 
-  <!-- ── HAPPY HOUR ─────────────────────────────────────── -->
-  <section class="menu-section section--dark" aria-label="Happy hour">
-    <div class="container">
-      <h2 class="menu-section__heading appear">Happy Hour</h2>
-      <p class="appear" style="font-size: 17px; color: var(--muted); line-height: 1.7;">Swing by your neighborhood bar in Mexico.</p>
-      <p class="appear" style="margin-top: 12px; font-size: 14px; color: var(--warm-brick); font-style: italic;">[Copy needed: happy hour days, times, and any specials -- confirm with Danny at pitch]</p>
-    </div>
-  </section>
-
-  <!-- ── WEEKLY EVENTS ──────────────────────────────────── -->
-  <section class="menu-section section--warm" aria-label="Weekly events" style="background: var(--bg-warm);">
-    <div class="container">
-      <div class="menu-events appear">
-        <h2 class="menu-events__heading">Weekly Events</h2>
-        <table class="events-table" aria-label="Weekly events schedule">
-          <thead>
-            <tr>
-              <th scope="col">Night</th>
-              <th scope="col">Event</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Thursdays, 7 PM</td>
-              <td>Karaoke with Tony Lake</td>
-            </tr>
-            <tr>
-              <td>Fridays</td>
-              <td>Live Band (fire pit stage)</td>
-            </tr>
-            <tr>
-              <td>Saturdays, 1 PM</td>
-              <td>Chickin Sh*t Bingo with Bocho</td>
-            </tr>
-            <tr>
-              <td>Periodic</td>
-              <td>Pub Trivia with Tony</td>
-            </tr>
-          </tbody>
-        </table>
-        <p style="margin-top: 20px; font-size: 15px; color: var(--muted);">Private events and birthday celebrations welcome. Contact Danny: <a href="mailto:pony602boy@gmail.com" style="color: var(--primary);">pony602boy@gmail.com</a></p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
-  <footer id="footer" role="contentinfo">
-    <div class="container">
-      <img src="assets/logo.jpg" alt="Bottoms Up Yacht Club circular badge logo" class="footer__logo" loading="lazy">
-      <p class="footer__name">Bottom's Up Yacht Club</p>
-      <p class="footer__tagline">Your neighborhood bar in Mexico.</p>
-      <p class="footer__hours">Open daily. Mon&ndash;Thu 10 AM&ndash;10 PM. Fri&ndash;Sat 10 AM&ndash;11 PM.</p>
-      <p class="footer__contact"><a href="tel:+526386881617">638 688 1617</a></p>
-      <p class="footer__address">Av. Chihuahua 141, Puerto Pe&ntilde;asco, Son.</p>
-      <div class="footer__social">
-        <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener noreferrer">Facebook: BottomsUPYachtClub</a>
-      </div>
-      <div class="footer__divider" aria-hidden="true"></div>
-      <p class="footer__meta">
-        Opened September 1, 2023 &middot; Puerto Pe&ntilde;asco, Mexico<br>
-        &copy; 2024 Bottom's Up Yacht Club<br>
-        <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">Site by NeonFrame Web Design</a>
+  <!-- WEEKLY EVENTS TABLE -->
+  <section class="section section--white" aria-label="Weekly events">
+    <div class="section__inner">
+      <h2 class="menu-events-h2 appear">Weekly Events</h2>
+      <table class="events-table appear" aria-label="Weekly events schedule">
+        <thead>
+          <tr>
+            <th scope="col">Night</th>
+            <th scope="col">Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Thursdays, 7 PM</td>
+            <td>Karaoke with Tony Lake</td>
+          </tr>
+          <tr>
+            <td>Fridays</td>
+            <td>Live Band (fire pit stage)</td>
+          </tr>
+          <tr>
+            <td>Saturdays, 1 PM</td>
+            <td>Chickin Sh*t Bingo with Bocho</td>
+          </tr>
+          <tr>
+            <td>Periodic</td>
+            <td>Pub Trivia with Tony</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="private-note appear">
+        Private events and birthday celebrations welcome.
+        <a href="mailto:pony602boy@gmail.com">Email Danny</a> to get started.
       </p>
     </div>
+  </section>
+
+  <!-- CORAL CTA BAND -->
+  <section class="section--coral" aria-label="Find us">
+    <div class="cta-band appear">
+      <h2>We're at Av. Chihuahua 141 in the Mirador neighborhood.</h2>
+      <p>Easy to find. Hard to leave.</p>
+      <a href="find-us.html" class="btn-cta-band">Find Us</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club" class="footer-logo">
+    <p class="footer-name">Bottom's Up Yacht Club</p>
+    <p class="footer-tagline">Your neighborhood bar in Mexico.</p>
+    <p class="footer-hours">Open daily. Mon-Thu 10 AM-10 PM. Fri-Sat 10 AM-11 PM.</p>
+    <p class="footer-phone"><a href="tel:+526386881617">638 688 1617</a></p>
+    <p class="footer-address">Av. Chihuahua 141, Puerto Penasco, Son.</p>
+    <p class="footer-social"><a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener">Facebook: BottomsUPYachtClub</a></p>
+    <hr class="footer-divider" aria-hidden="true">
+    <p class="footer-legal">
+      &copy; 2025 Bottom's Up Yacht Club<br>
+      <a href="https://neonframewebdesign.com" target="_blank" rel="noopener">Site by NeonFrame Web Design</a>
+    </p>
   </footer>
 
   <script src="js/main.js"></script>

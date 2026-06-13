@@ -1,44 +1,36 @@
-/* ============================================================
-   BOTTOMS UP YACHT CLUB — main.js
-   Nav scroll, hamburger, scroll reveal, hero parallax, loader.
-   ============================================================ */
+/* ================================================================
+   BOTTOMS UP YACHT CLUB -- main.js  (v2)
+   Nav scroll state, hamburger drawer, scroll reveal.
+   No loader. No parallax. Clean and fast.
+   ================================================================ */
 
 (function () {
   'use strict';
 
-  // ── Loader ────────────────────────────────────────────────
-  const loader = document.getElementById('loader');
-
-  if (loader) {
-    // Dismiss after 1.4s
-    const dismissLoader = () => {
-      loader.classList.add('done');
-      setTimeout(() => {
-        loader.style.display = 'none';
-      }, 450);
-    };
-
-    if (document.readyState === 'complete') {
-      setTimeout(dismissLoader, 1400);
-    } else {
-      window.addEventListener('load', () => {
-        setTimeout(dismissLoader, 1400);
-      });
-    }
-  }
-
-  // ── Sticky nav ────────────────────────────────────────────
+  /* -- Sticky nav shadow ----------------------------------------- */
   const nav = document.getElementById('navbar');
-
   if (nav) {
     const onScroll = () => {
-      nav.classList.toggle('scrolled', window.scrollY > 60);
+      nav.classList.toggle('scrolled', window.scrollY > 80);
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
   }
 
-  // ── Mobile hamburger ──────────────────────────────────────
+  /* -- Active nav link ------------------------------------------- */
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach((a) => {
+    const href = a.getAttribute('href') || '';
+    if (
+      href === currentPage ||
+      (currentPage === '' && href === 'index.html') ||
+      (currentPage === 'index.html' && href === 'index.html')
+    ) {
+      a.classList.add('active');
+    }
+  });
+
+  /* -- Hamburger / mobile drawer --------------------------------- */
   const hamburger = document.getElementById('hamburger');
   const navLinks  = document.getElementById('navLinks');
 
@@ -71,68 +63,34 @@
     });
   }
 
-  // ── Scroll cue hide ───────────────────────────────────────
-  const scrollCue = document.querySelector('.hero__scrollcue');
-
-  if (scrollCue) {
-    const hideCue = () => {
-      if (window.scrollY > 100) {
-        scrollCue.classList.add('hidden');
-      } else {
-        scrollCue.classList.remove('hidden');
-      }
-    };
-    window.addEventListener('scroll', hideCue, { passive: true });
-  }
-
-  // ── Scroll reveal via IntersectionObserver ────────────────
-  const revealObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          revealObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.10, rootMargin: '0px 0px -6% 0px' }
-  );
-
-  document.querySelectorAll('.appear').forEach((el) => {
-    revealObserver.observe(el);
-  });
-
-  // ── Hero parallax (desktop only, respects reduce-motion) ─
-  const heroBgImg = document.querySelector('.hero__bg img');
-  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-
-  if (heroBgImg && !prefersReduced && isDesktop) {
-    let ticking = false;
-
-    const onScrollHero = () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const y = window.scrollY;
-          if (y < window.innerHeight) {
-            heroBgImg.style.transform = `scale(1.08) translateY(${y * 0.4 * 0.25}px)`;
+  /* -- Scroll reveal (IntersectionObserver) ---------------------- */
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
           }
-          ticking = false;
         });
-        ticking = true;
-      }
-    };
+      },
+      { threshold: 0.12, rootMargin: '0px 0px -6% 0px' }
+    );
 
-    window.addEventListener('scroll', onScrollHero, { passive: true });
+    document.querySelectorAll('.appear').forEach((el) => revealObserver.observe(el));
+
+    /* Stagger child cards within grid parents */
+    document.querySelectorAll('.highlights-grid, .events-grid, .reviews-grid, .food-grid').forEach((grid) => {
+      const cards = grid.querySelectorAll('.appear');
+      cards.forEach((card, i) => {
+        card.style.transitionDelay = (i * 60) + 'ms';
+      });
+    });
+  } else {
+    /* Reduced motion: show everything immediately */
+    document.querySelectorAll('.appear').forEach((el) => {
+      el.classList.add('is-visible');
+    });
   }
-
-  // ── Active nav link highlight ─────────────────────────────
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__links a').forEach((a) => {
-    const href = a.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
-      a.classList.add('active');
-    }
-  });
 
 })();

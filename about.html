@@ -3,165 +3,169 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About | Bottoms Up Yacht Club | Rocky Point, Mexico</title>
-  <meta name="description" content="The story of Bottoms Up Yacht Club in Puerto Penasco, Mexico. Opened September 1, 2023 by Danny Davis, whose family has been coming to Rocky Point since the 1960s.">
+  <title>About - Bottom's Up Yacht Club | Puerto Penasco, Mexico</title>
+  <meta name="description" content="Bottom's Up Yacht Club opened September 1, 2023. Danny Davis built a neighborhood bar in Rocky Point -- a community center where everyone feels at home. 4.9 stars on Google.">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="About - Bottom's Up Yacht Club">
+  <meta property="og:description" content="The story of Rocky Point's favorite neighborhood bar. Danny Davis. September 1, 2023. The day Bottom's Up opened. Also the day Jimmy Buffett died.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/atmosphere_1.jpg">
   <meta property="og:url" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/about.html">
-  <meta property="og:title" content="About | Bottoms Up Yacht Club">
-  <meta property="og:description" content="Opened September 1, 2023. The day Jimmy Buffett died. The story of Rocky Point's best neighborhood bar.">
-  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/interior_4.jpg">
+  <meta property="og:type" content="website">
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="Bottoms Up Yacht Club home">
-        <img src="assets/logo.jpg" alt="" class="nav__logo" aria-hidden="true">
-        <span class="nav__name">Bottom's Up Yacht Club</span>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="Bottom's Up Yacht Club home">
+        <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club logo">
+        <span class="nav-brand-name">Bottom's Up Yacht Club</span>
       </a>
-
-      <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#events">Events</a></li>
-        <li><a href="index.html#the-bar">The Bar</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html">Find Us</a></li>
-        <li class="nav-cta"><a href="find-us.html#contact" class="btn btn--primary">Book a Party</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="find-us.html">Find Us</a></li>
+          <li class="nav-mobile-cta"><a href="find-us.html" class="btn-nav-cta">Find Us</a></li>
+        </ul>
+        <a href="find-us.html" class="btn-nav-cta nav-cta-desktop">Find Us</a>
+        <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ── PAGE HERO ─────────────────────────────────────── -->
-  <header class="page-hero" role="banner">
-    <div class="container">
-      <span class="page-hero__label">The Story</span>
-      <h1 class="page-hero__heading">September 1, 2023.</h1>
-      <p class="page-hero__sub">The day Bottoms Up Yacht Club opened its doors in Rocky Point. Also the day Jimmy Buffett died.</p>
-    </div>
+  <!-- PAGE HERO -->
+  <header class="page-hero page-hero--coral" aria-label="About page header">
+    <span class="sub-label">Our Story</span>
+    <h1>September 1, 2023.</h1>
+    <p>The day Bottoms Up opened. Also the day Jimmy Buffett died.</p>
   </header>
 
-  <!-- ── ABOUT MAIN ─────────────────────────────────────── -->
-  <section id="about" class="section section--dark" aria-label="About Bottoms Up Yacht Club">
-    <div class="container">
-      <div class="about__grid">
-        <div class="about__text">
-          <span class="section-label appear">Opening</span>
-          <h2 class="section-heading appear">The next logical thing.</h2>
-          <div class="about__body appear">
-            <p>Danny Davis didn't plan it that way, but there's something right about it. His grandfather had been coming to Puerto Penasco since the 1960s. Danny grew up with Rocky Point in his blood and a Margaritaville tattoo to prove it. Opening a bar here wasn't a business plan. It was the next logical thing.</p>
+  <!-- OPENING STORY -->
+  <section class="section section--white" aria-label="Opening story">
+    <div class="section__inner">
+      <div class="about-two-col">
+
+        <div class="text-col appear">
+          <p>Danny Davis didn't plan it that way, but there's something right about it. His grandfather had been coming to Puerto Penasco since the 1960s. Danny grew up with Rocky Point in his blood and a Margaritaville tattoo to prove it. Opening a bar here wasn't a business plan. It was the next logical thing.</p>
+
+          <div class="pull-quote">
+            <blockquote>We're a neighborhood bar -- a community center where everyone knows each other or feels at home.</blockquote>
+            <span class="attribution">Danny Davis</span>
           </div>
+
+          <p>That's not a mission statement. That's just how it is.</p>
         </div>
-        <div class="about__photo-wrap appear">
+
+        <div class="appear">
           <img
             src="assets/staff_2.jpg"
-            alt="Danny Davis behind the brick bar at Bottoms Up Yacht Club, arms raised and grinning while pouring drinks"
+            alt="Danny Davis behind the brick bar at Bottom's Up Yacht Club"
+            class="about-photo"
             loading="lazy"
           >
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── WHAT IT IS ─────────────────────────────────────── -->
-  <section class="section section--warm" aria-label="What the bar is">
-    <div class="container">
-      <div class="about__grid">
-        <div class="about__text">
-          <span class="section-label appear">What It Is</span>
-          <h2 class="section-heading appear">A neighborhood bar. Danny calls us a community center, and he's not wrong.</h2>
-          <div class="about__body appear">
-            <p>Come in once and you're a regular. Come in twice and the staff knows your name. People drive down from Arizona every weekend. They bring their friends. Those friends start coming on their own. That's how this works.</p>
-            <p>We've got a full indoor bar with a brick face and a bottle wall. A pool room for locals. A patio with blue sofas, string lights, and a fire pit stage where bands play on Fridays. Karaoke on Thursdays. Chickin Sh*t Bingo on Saturdays. Games everywhere: pool, Jenga, foosball, dominoes, chess.</p>
-            <p>We are open seven days a week. We are always happy to see you.</p>
+  <!-- WHAT IT IS -->
+  <section class="section section--sand" aria-label="What it is">
+    <div class="section__inner">
+      <div class="about-what-it-is appear">
+        <h2>What It Is</h2>
+        <p>We're a neighborhood bar. Danny calls us a community center, and he's not wrong.</p>
+        <p>Come in once and you're a regular. Come in twice and the staff knows your name. People drive down from Arizona every weekend. They bring their friends. Those friends start coming on their own. That's how this works.</p>
+        <p>We've got a full indoor bar with a brick face and a bottle wall. A pool room for locals. A patio with blue sofas, string lights, and a fire pit stage where bands play on Fridays. Karaoke on Thursdays. Chickin Sh*t Bingo on Saturdays. Games everywhere: pool, Jenga, foosball, dominoes, chess.</p>
+        <p>We are open seven days a week. We are always happy to see you.</p>
+      </div>
+
+      <div class="photo-strip appear">
+        <img
+          src="assets/interior_2.jpg"
+          alt="Outdoor patio with blue cushioned sofas"
+          style="object-position: top right;"
+          loading="lazy"
+        >
+        <img
+          src="assets/atmosphere_1.jpg"
+          alt="Group of friends at the bar"
+          loading="lazy"
+        >
+        <img
+          src="assets/interior_5.jpg"
+          alt="Locals Only Pool Room"
+          style="object-position: top left;"
+          loading="lazy"
+        >
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FEEL / RATING CALLOUT -->
+  <section class="section section--white" aria-label="The feel and ratings">
+    <div class="section__inner">
+      <div class="about-feel-grid">
+
+        <div class="feel-text appear">
+          <p>"Our staff knows you by name and you feel at home -- not just like a one-time tourist."</p>
+          <p>That's Danny. That's the whole point.</p>
+          <p>Good attitudes and good vibes are the actual policy here. Not a slogan. Just how it is.</p>
+
+          <div class="pull-quote pull-quote--teal">
+            <blockquote>We've got a 4.9 on Google across 170 reviews. We're proud of that. We're more proud that people keep coming back.</blockquote>
           </div>
-          <blockquote class="about__pullquote appear">
-            "We're a neighborhood bar -- a community center where everyone knows each other or feels at home."
-            <cite>Danny Davis, managing partner</cite>
-          </blockquote>
         </div>
-        <div class="about__photo-wrap appear">
-          <img
-            src="assets/atmosphere_1.jpg"
-            alt="Group of guests smiling and having a great time at the bar at Bottoms Up Yacht Club"
-            loading="lazy"
-          >
+
+        <div class="rating-callout appear" aria-label="4.9 out of 5 rating on Google">
+          <span class="big-number">4.9</span>
+          <span class="out-of">out of 5 on Google</span>
+          <div class="stars-sm" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <span class="review-count">170 reviews</span>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── THE FEEL ───────────────────────────────────────── -->
-  <section class="section section--dark" aria-label="The feel">
-    <div class="container">
-      <span class="section-label appear">The Feel</span>
-      <h2 class="section-heading appear" style="max-width: 640px;">"Our staff knows you by name and you feel at home -- not just like a one-time tourist."</h2>
-      <div class="about__body appear" style="max-width: 640px; margin-top: 8px; font-size: 16px; color: var(--muted);">That's Danny. That's the whole point.</div>
-      <div class="about__body appear" style="max-width: 640px; margin-top: 20px;">
-        <p>Good attitudes and good vibes are the actual policy here. Not a slogan. Just how it is.</p>
-        <p>We've got a 4.9 on Google across 170 reviews. We're proud of that. We're more proud that people keep coming back.</p>
-      </div>
-
-      <!-- Photo pair -->
-      <div class="about-page__photos">
-        <div class="about-page__photo appear appear--delay-1">
-          <img
-            src="assets/event_1.jpg"
-            alt="Birthday party celebration at Bottoms Up Yacht Club indoor patio room with Feliz Cumpleanos banner"
-            loading="lazy"
-          >
-        </div>
-        <div class="about-page__photo appear appear--delay-2">
-          <img
-            src="assets/staff_1.jpg"
-            alt="Danny Davis and a staff member outside Bottoms Up Yacht Club with palm trees and blue sky in the background"
-            loading="lazy"
-          >
-        </div>
-      </div>
+  <!-- CORAL CTA BAND -->
+  <section class="section--coral" aria-label="Find us">
+    <div class="cta-band appear">
+      <h2>We're at Av. Chihuahua 141 in the Mirador neighborhood.</h2>
+      <p>Easy to find. Hard to leave.</p>
+      <a href="find-us.html" class="btn-cta-band">Find Us</a>
     </div>
   </section>
 
-  <!-- ── CTA ───────────────────────────────────────────── -->
-  <section id="findus-cta" class="section section--warm" aria-label="Visit us">
-    <div class="container" style="text-align: center;">
-      <h2 class="findus-cta__heading appear">Stop in. Say hi.</h2>
-      <p class="findus-cta__sub appear">Tell Danny we sent you.</p>
-      <div class="appear">
-        <a href="find-us.html" class="btn btn--primary">Find Us</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
-  <footer id="footer" role="contentinfo">
-    <div class="container">
-      <img src="assets/logo.jpg" alt="Bottoms Up Yacht Club circular badge logo" class="footer__logo" loading="lazy">
-      <p class="footer__name">Bottom's Up Yacht Club</p>
-      <p class="footer__tagline">Your neighborhood bar in Mexico.</p>
-      <p class="footer__hours">Open daily. Mon&ndash;Thu 10 AM&ndash;10 PM. Fri&ndash;Sat 10 AM&ndash;11 PM.</p>
-      <p class="footer__contact"><a href="tel:+526386881617">638 688 1617</a></p>
-      <p class="footer__address">Av. Chihuahua 141, Puerto Pe&ntilde;asco, Son.</p>
-      <div class="footer__social">
-        <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener noreferrer">Facebook: BottomsUPYachtClub</a>
-      </div>
-      <div class="footer__divider" aria-hidden="true"></div>
-      <p class="footer__meta">
-        Opened September 1, 2023 &middot; Puerto Pe&ntilde;asco, Mexico<br>
-        &copy; 2024 Bottom's Up Yacht Club<br>
-        <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">Site by NeonFrame Web Design</a>
-      </p>
-    </div>
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club" class="footer-logo">
+    <p class="footer-name">Bottom's Up Yacht Club</p>
+    <p class="footer-tagline">Your neighborhood bar in Mexico.</p>
+    <p class="footer-hours">Open daily. Mon-Thu 10 AM-10 PM. Fri-Sat 10 AM-11 PM.</p>
+    <p class="footer-phone"><a href="tel:+526386881617">638 688 1617</a></p>
+    <p class="footer-address">Av. Chihuahua 141, Puerto Penasco, Son.</p>
+    <p class="footer-social"><a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener">Facebook: BottomsUPYachtClub</a></p>
+    <hr class="footer-divider" aria-hidden="true">
+    <p class="footer-legal">
+      &copy; 2025 Bottom's Up Yacht Club<br>
+      <a href="https://neonframewebdesign.com" target="_blank" rel="noopener">Site by NeonFrame Web Design</a>
+    </p>
   </footer>
 
   <script src="js/main.js"></script>

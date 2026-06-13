@@ -3,176 +3,142 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Us | Bottoms Up Yacht Club | Rocky Point, Mexico</title>
-  <meta name="description" content="Find Bottoms Up Yacht Club at Av. Chihuahua 141, Mirador neighborhood, Puerto Penasco, Sonora, Mexico. Open 7 days a week. Call 638 688 1617.">
+  <title>Find Us - Bottom's Up Yacht Club | Puerto Penasco, Mexico</title>
+  <meta name="description" content="Bottom's Up Yacht Club. Av. Chihuahua 141, Mirador neighborhood, Puerto Penasco. Open daily. Call 638 688 1617. Easy to find. Hard to leave.">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Find Us - Bottom's Up Yacht Club">
+  <meta property="og:description" content="Av. Chihuahua 141 in the Mirador neighborhood of Puerto Penasco. Open seven days a week. Easy to find. Hard to leave.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/atmosphere_1.jpg">
   <meta property="og:url" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/find-us.html">
-  <meta property="og:title" content="Find Us | Bottoms Up Yacht Club">
-  <meta property="og:description" content="Av. Chihuahua 141, Mirador neighborhood, Puerto Penasco. Open 7 days. Easy to find. Hard to leave.">
-  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/interior_4.jpg">
+  <meta property="og:type" content="website">
 
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <!-- NAV -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
-    <div class="nav__inner">
-      <a href="index.html" class="nav__brand" aria-label="Bottoms Up Yacht Club home">
-        <img src="assets/logo.jpg" alt="" class="nav__logo" aria-hidden="true">
-        <span class="nav__name">Bottom's Up Yacht Club</span>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand" aria-label="Bottom's Up Yacht Club home">
+        <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club logo">
+        <span class="nav-brand-name">Bottom's Up Yacht Club</span>
       </a>
-
-      <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-
-      <ul class="nav__links" id="navLinks" role="list">
-        <li><a href="about.html">About</a></li>
-        <li><a href="index.html#events">Events</a></li>
-        <li><a href="index.html#the-bar">The Bar</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="find-us.html">Find Us</a></li>
-        <li class="nav-cta"><a href="find-us.html#contact" class="btn btn--primary">Book a Party</a></li>
-      </ul>
+      <div class="nav-right">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="find-us.html">Find Us</a></li>
+          <li class="nav-mobile-cta"><a href="find-us.html" class="btn-nav-cta">Find Us</a></li>
+        </ul>
+        <a href="find-us.html" class="btn-nav-cta nav-cta-desktop">Find Us</a>
+        <button id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </nav>
 
-  <!-- ── PAGE HERO ─────────────────────────────────────── -->
-  <header class="page-hero" role="banner">
-    <div class="container">
-      <span class="page-hero__label">Find Us</span>
-      <h1 class="page-hero__heading">Easy to find. Hard to leave.</h1>
-      <p class="page-hero__sub">Mirador neighborhood. If you've been to Rocky Point before, you know the area.</p>
-    </div>
+  <!-- PAGE HERO -->
+  <header class="page-hero page-hero--sand" aria-label="Find us page header">
+    <h1>Find Us</h1>
+    <p>Mirador neighborhood. Easy to find. Hard to leave.</p>
   </header>
 
-  <!-- ── CONTACT ────────────────────────────────────────── -->
-  <section id="contact" class="section section--dark" aria-label="Location and contact">
-    <div class="container">
-      <div class="contact__grid">
+  <!-- CONTACT AND HOURS -->
+  <section class="section section--white" aria-label="Location and hours">
+    <div class="section__inner">
+      <div class="find-us-grid">
 
-        <!-- Left: Info -->
-        <div class="contact__info appear">
-          <h2 class="contact__bar-name">Bottom's Up Yacht Club</h2>
-
-          <p class="contact__detail">
+        <!-- Left: info -->
+        <div class="info-block appear">
+          <h2>Bottom's Up Yacht Club</h2>
+          <p class="address-block">
             Av. Chihuahua 141<br>
-            Benito Ju&aacute;rez, Puerto Pe&ntilde;asco<br>
-            Sonora, Mexico 83554
+            Benito Juarez, Puerto Penasco, Sonora, Mexico
+          </p>
+          <p class="address-note">Mirador neighborhood. If you've been to Rocky Point before, you know the area.</p>
+
+          <a href="tel:+526386881617" class="phone-link">638 688 1617</a>
+
+          <table class="hours-table" aria-label="Hours of operation">
+            <tbody>
+              <tr>
+                <td>Monday - Thursday</td>
+                <td>10 AM - 10 PM</td>
+              </tr>
+              <tr>
+                <td>Friday - Saturday</td>
+                <td>10 AM - 11 PM</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>10 AM - 10 PM</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="hours-note">[confirm open time 9 AM or 10 AM with Danny at pitch]</p>
+
+          <p class="social-line">
+            <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener">
+              Facebook: BottomsUPYachtClub
+            </a>
+            -- that's where we post the weekly events calendar. Give us a follow.
           </p>
 
-          <p class="contact__detail" style="margin-top: 12px;">
-            <a href="tel:+526386881617">+52 638 688 1617</a>
-          </p>
-
-          <div class="contact__hours">
-            <p class="contact__hours-label">Hours <span style="color: var(--warm-brick); font-style: italic;">(confirm open time with venue -- 9 AM or 10 AM)</span></p>
-            <table class="hours-table" aria-label="Operating hours">
-              <tbody>
-                <tr>
-                  <td>Monday &ndash; Thursday</td>
-                  <td>10 AM &ndash; 10 PM</td>
-                </tr>
-                <tr>
-                  <td>Friday &ndash; Saturday</td>
-                  <td>10 AM &ndash; 11 PM</td>
-                </tr>
-                <tr>
-                  <td>Sunday</td>
-                  <td>10 AM &ndash; 10 PM</td>
-                </tr>
-              </tbody>
-            </table>
-            <p style="margin-top: 10px; font-size: 14px; color: var(--muted);">We're open every day. Yes, including holidays.</p>
-          </div>
-
-          <div class="contact__socials">
-            <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="Follow us on Facebook">
-              <!-- Facebook icon -->
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-              <span>BottomsUPYachtClub</span>
-            </a>
-            <div class="contact__social-link" style="cursor: default; opacity: 0.5;" aria-label="Instagram coming soon">
-              <!-- Instagram icon -->
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-              </svg>
-              <span>@bottomsup_yachtclub<span class="contact__social-note">(coming soon)</span></span>
-            </div>
-          </div>
-
-          <div class="contact__cta">
-            <a
-              href="mailto:pony602boy@gmail.com?subject=Event%20Inquiry%20--%20Bottom's%20Up%20Yacht%20Club"
-              class="btn btn--primary"
-              aria-label="Book a private event by email"
-            >
-              Book a Private Event
-            </a>
-          </div>
+          <a
+            href="mailto:pony602boy@gmail.com?subject=Event Inquiry - Bottom's Up Yacht Club"
+            class="btn-event-cta"
+          >
+            Book a Private Event
+          </a>
         </div>
 
-        <!-- Right: Map -->
-        <div class="contact__map appear appear--delay-2">
+        <!-- Right: map -->
+        <div class="map-col appear">
           <iframe
-            title="Bottoms Up Yacht Club location map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3568.6!2d-113.5483!3d31.3042!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86d1c5e0b2c5a2b1%3A0x0!2sAv.%20Chihuahua%20141%2C%20Benito%20Ju%C3%A1rez%2C%20Puerto%20Pe%C3%B1asco%2C%20Sonora%2C%20Mexico!5e0!3m2!1sen!2sus!4v1718000000000!5m2!1sen!2sus"
-            allowfullscreen=""
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3468.8!2d-113.5276!3d31.3060!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86ce8b7f3e3b4a1f%3A0x0!2sAv.%20Chihuahua%20141%2C%20Puerto%20Pe%C3%B1asco%2C%20Sonora%2C%20Mexico!5e0!3m2!1sen!2sus!4v1"
+            title="Bottom's Up Yacht Club location map"
+            allowfullscreen
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
 
       </div>
-    </div>
-  </section>
 
-  <!-- ── CTA STRIP ─────────────────────────────────────── -->
-  <section class="section section--warm" aria-label="Visit us">
-    <div class="container" style="text-align: center;">
-      <h2 class="findus-cta__heading appear">Stop in. Say hi. Tell Danny we sent you.</h2>
-      <div class="appear" style="margin-top: 24px;">
-        <a
-          href="https://maps.google.com/?q=Av.+Chihuahua+141+Puerto+Penasco+Sonora+Mexico"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn--primary"
-          aria-label="Get directions to Bottoms Up Yacht Club"
-        >
-          Get Directions
-        </a>
+      <div class="find-us-cta appear">
+        <p>Stop in. Say hi. Tell Danny we sent you.</p>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ─────────────────────────────────────────── -->
-  <footer id="footer" role="contentinfo">
-    <div class="container">
-      <img src="assets/logo.jpg" alt="Bottoms Up Yacht Club circular badge logo" class="footer__logo" loading="lazy">
-      <p class="footer__name">Bottom's Up Yacht Club</p>
-      <p class="footer__tagline">Your neighborhood bar in Mexico.</p>
-      <p class="footer__hours">Open daily. Mon&ndash;Thu 10 AM&ndash;10 PM. Fri&ndash;Sat 10 AM&ndash;11 PM.</p>
-      <p class="footer__contact"><a href="tel:+526386881617">638 688 1617</a></p>
-      <p class="footer__address">Av. Chihuahua 141, Puerto Pe&ntilde;asco, Son.</p>
-      <div class="footer__social">
-        <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener noreferrer">Facebook: BottomsUPYachtClub</a>
-      </div>
-      <div class="footer__divider" aria-hidden="true"></div>
-      <p class="footer__meta">
-        Opened September 1, 2023 &middot; Puerto Pe&ntilde;asco, Mexico<br>
-        &copy; 2024 Bottom's Up Yacht Club<br>
-        <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">Site by NeonFrame Web Design</a>
-      </p>
+  <!-- CORAL CTA BAND -->
+  <section class="section--coral" aria-label="Come in CTA">
+    <div class="cta-band appear">
+      <h2>We're at Av. Chihuahua 141 in the Mirador neighborhood.</h2>
+      <p>Easy to find. Hard to leave.</p>
+      <a href="tel:+526386881617" class="btn-cta-band">Call Us</a>
     </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" aria-label="Site footer">
+    <img src="assets/logo.jpg" alt="Bottom's Up Yacht Club" class="footer-logo">
+    <p class="footer-name">Bottom's Up Yacht Club</p>
+    <p class="footer-tagline">Your neighborhood bar in Mexico.</p>
+    <p class="footer-hours">Open daily. Mon-Thu 10 AM-10 PM. Fri-Sat 10 AM-11 PM.</p>
+    <p class="footer-phone"><a href="tel:+526386881617">638 688 1617</a></p>
+    <p class="footer-address">Av. Chihuahua 141, Puerto Penasco, Son.</p>
+    <p class="footer-social"><a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener">Facebook: BottomsUPYachtClub</a></p>
+    <hr class="footer-divider" aria-hidden="true">
+    <p class="footer-legal">
+      &copy; 2025 Bottom's Up Yacht Club<br>
+      <a href="https://neonframewebdesign.com" target="_blank" rel="noopener">Site by NeonFrame Web Design</a>
+    </p>
   </footer>
 
   <script src="js/main.js"></script>
