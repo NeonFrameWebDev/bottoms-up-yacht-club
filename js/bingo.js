@@ -17,10 +17,24 @@
 
   const squares = Array.prototype.slice.call(board.querySelectorAll('.bingo-sq'));
   if (!squares.length) return;
+  if (board.querySelector('.bingo-chicken')) return;   // guard: already initialised
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   function randInt(min, max) { return min + Math.floor(Math.random() * (max - min + 1)); }
+
+  /* Scatter the numbers across the board each load, like the real game. */
+  (function shuffleNumbers() {
+    const nums = squares.map(function (_, i) { return i + 1; });
+    for (let i = nums.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const tmp = nums[i]; nums[i] = nums[j]; nums[j] = tmp;
+    }
+    squares.forEach(function (sq, i) {
+      sq.setAttribute('data-n', String(nums[i]));
+      sq.textContent = String(nums[i]);
+    });
+  })();
 
   /* -- The hen ---------------------------------------------------- */
   const SVG =
@@ -83,10 +97,16 @@
     clearWinner();
     squares[i].classList.add('is-winner');
     const n = squares[i].getAttribute('data-n');
+    const calledIt = (i === picked);
     if (caption) {
-      caption.innerHTML = (i === picked)
+      caption.innerHTML = calledIt
         ? 'You called it. Square <strong>' + n + '</strong> takes the pot!'
         : 'The hen picks square <strong>' + n + '</strong>.';
+    }
+    // The hen has decided -- clear the player's bet so the next round is fresh.
+    if (picked >= 0) {
+      squares[picked].classList.remove('is-picked');
+      picked = -1;
     }
   }
 
@@ -136,6 +156,7 @@
     running = false;
     clearTimers();
     hen.classList.remove('is-walking', 'is-pecking');
+    clearWinner();   // don't leave a stuck gold square if paused mid-win
   }
 
   /* -- Click to call a number ------------------------------------- */
@@ -166,16 +187,27 @@
 
   if (reduceMotion) return;   // hen sits still; clicking still calls a number
 
+  /* Run only while the board is on-screen AND the tab is visible.
+     IntersectionObserver doesn't fire on tab switches, so gate on both. */
+  let inView = !('IntersectionObserver' in window); // assume visible if unsupported
+  function syncRun() {
+    if (inView && !document.hidden) {
+      computeCenters();
+      placeInstant(current);
+      start();
+    } else {
+      stop();
+    }
+  }
+
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) { computeCenters(); placeInstant(current); start(); }
-        else stop();
-      });
+      entries.forEach(function (e) { inView = e.isIntersecting; });
+      syncRun();
     }, { threshold: 0.2 });
     io.observe(board);
-  } else {
-    start();
   }
+  document.addEventListener('visibilitychange', syncRun);
+  syncRun();
 
 })();

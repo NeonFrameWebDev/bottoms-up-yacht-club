@@ -110,17 +110,25 @@
 
   function paintSun() {
     const s = sunPos();
-    // soft halo
-    const halo = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 5);
-    halo.addColorStop(0, 'rgba(255,225,170,0.55)');
-    halo.addColorStop(0.4, 'rgba(255,190,120,0.22)');
-    halo.addColorStop(1, 'rgba(255,180,110,0)');
+    // wide atmospheric bloom
+    const bloom = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 9);
+    bloom.addColorStop(0, 'rgba(255,210,150,0.40)');
+    bloom.addColorStop(0.5, 'rgba(255,180,120,0.12)');
+    bloom.addColorStop(1, 'rgba(255,170,110,0)');
+    ctx.fillStyle = bloom;
+    ctx.fillRect(0, 0, W, horizonY() + s.r);
+    // tighter halo
+    const halo = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r * 3.6);
+    halo.addColorStop(0, 'rgba(255,235,190,0.7)');
+    halo.addColorStop(0.4, 'rgba(255,200,140,0.28)');
+    halo.addColorStop(1, 'rgba(255,190,120,0)');
     ctx.fillStyle = halo;
     ctx.fillRect(0, 0, W, horizonY() + s.r);
-    // disk
-    const disk = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, s.r);
-    disk.addColorStop(0, '#fff4d6');
-    disk.addColorStop(0.6, '#ffdf9b');
+    // crisp disk with a hot core
+    const disk = ctx.createRadialGradient(s.x, s.y - s.r * 0.18, 0, s.x, s.y, s.r);
+    disk.addColorStop(0, '#fffaf0');
+    disk.addColorStop(0.45, '#ffe9b0');
+    disk.addColorStop(0.85, '#ffce82');
     disk.addColorStop(1, '#ffb867');
     ctx.fillStyle = disk;
     ctx.beginPath();
@@ -130,33 +138,49 @@
 
   function paintWater(t) {
     const hy = horizonY();
+    const wh = H - hy;
     const g = ctx.createLinearGradient(0, hy, 0, H);
     g.addColorStop(0.00, '#cf8552'); // warm reflected band at horizon
     g.addColorStop(0.30, '#7d5358');
     g.addColorStop(0.70, '#3c2c45');
     g.addColorStop(1.00, '#201a30'); // deep water at the bottom
     ctx.fillStyle = g;
-    ctx.fillRect(0, hy, W, H - hy);
+    ctx.fillRect(0, hy, W, wh);
 
-    // Sun's reflection: shimmering horizontal streaks below the sun.
+    // Faint horizontal ripple texture across the whole surface.
+    ctx.save();
+    ctx.globalAlpha = 0.05;
+    ctx.fillStyle = '#ffd9a0';
+    const bands = 22;
+    for (let i = 0; i < bands; i++) {
+      const p = i / bands;
+      const y = hy + p * wh + (reduceMotion ? 0 : Math.sin(t * 1.2 + i) * 1.3);
+      ctx.fillRect(0, y, W, 1);
+    }
+    ctx.restore();
+
+    // Sun's reflection: many low-alpha streaks blended additively -> a
+    // smooth, luminous shimmer column with no visible banding.
     const s = sunPos();
-    const rows = 16;
+    ctx.save();
+    ctx.globalCompositeOperation = 'lighter';
+    const rows = 56;
+    const rowH = Math.max(1.4, (wh / rows) * 1.4); // overlap so rows blend
     for (let i = 0; i < rows; i++) {
       const p = i / rows;
-      const y = hy + p * (H - hy);
-      const wobble = reduceMotion ? 0 : Math.sin(t * 1.6 + i * 0.9) * (4 + p * 14);
-      const wWidth = s.r * (1.1 + p * 2.4);
-      const alpha = (1 - p) * 0.5;
-      ctx.globalAlpha = alpha;
+      const y = hy + p * wh;
+      const wobble = reduceMotion ? 0 : Math.sin(t * 1.7 + i * 0.7) * (3 + p * 12);
+      const pulse  = reduceMotion ? 1 : (0.72 + 0.28 * Math.sin(t * 3.0 + i * 0.55));
+      const wWidth = s.r * (0.85 + p * 3.0) * pulse;
+      const alpha  = (1 - p) * 0.16;
       const streak = ctx.createLinearGradient(s.x - wWidth, 0, s.x + wWidth, 0);
-      streak.addColorStop(0, 'rgba(255,200,130,0)');
-      streak.addColorStop(0.5, 'rgba(255,214,150,0.9)');
-      streak.addColorStop(1, 'rgba(255,200,130,0)');
+      streak.addColorStop(0.0, 'rgba(255,196,120,0)');
+      streak.addColorStop(0.5, 'rgba(255,226,170,' + alpha + ')');
+      streak.addColorStop(1.0, 'rgba(255,196,120,0)');
       ctx.fillStyle = streak;
-      const h = Math.max(1.5, (H - hy) / rows * 0.6);
-      ctx.fillRect(s.x - wWidth + wobble, y, wWidth * 2, h);
+      ctx.fillRect(s.x - wWidth + wobble, y, wWidth * 2, rowH);
     }
-    ctx.globalAlpha = 1;
+    ctx.restore();
   }
 
   function paintBoat(t) {
