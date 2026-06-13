@@ -252,43 +252,76 @@ ul  { list-style: none; }
 }
 
 /* ================================================================
-   HERO -- split screen
+   HERO -- diagonal split screen
    ================================================================ */
+
+/* Mobile-first: stacked */
 .hero {
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
 }
 
-/* Desktop: 50/50 grid, full viewport height */
-@media (min-width: 768px) {
-  .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 100dvh;
-    min-height: 600px;
-  }
-}
-
-/* Photo half */
+/* Photo panel */
 .hero__photo {
   position: relative;
   overflow: hidden;
+  height: 55vw;
+  min-height: 280px;
+  max-height: 420px;
+  flex-shrink: 0;
 }
 .hero__photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 25%;
+  display: block;
 }
-.hero__scrim {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(26,26,26,0.55) 0%, transparent 40%);
-  pointer-events: none;
+
+/* Coral content panel */
+.hero__coral {
+  background: var(--coral);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 36px 24px 48px;
 }
+.hero__coral-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* Logo badge in the coral panel */
+.hero__logo-wrap {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  flex-shrink: 0;
+}
+.hero__logo-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+/* Text block */
 .hero__text {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 0 40px 48px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
 .hero__location {
   display: block;
@@ -297,117 +330,127 @@ ul  { list-style: none; }
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--white);
+  color: rgba(255,255,255,0.75);
   margin-bottom: 10px;
 }
 .hero__headline {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 44px;
+  font-size: 40px;
   color: var(--white);
   line-height: 1.05;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .hero__subhead {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 17px;
+  font-size: 16px;
   color: rgba(255,255,255,0.88);
-  max-width: 440px;
-  line-height: 1.6;
+  line-height: 1.65;
   margin-bottom: 24px;
+  max-width: 380px;
 }
 .hero__ctas {
   display: flex;
-  flex-direction: column;
   gap: 12px;
+  flex-wrap: wrap;
 }
 .btn-hero-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  background: var(--coral);
-  color: var(--white);
+  background: var(--white);
+  color: var(--coral);
   height: 50px;
-  padding: 0 20px;
+  padding: 0 28px;
   border-radius: var(--radius-sm);
-  transition: background 180ms ease, transform 180ms ease;
+  transition: transform 180ms ease, box-shadow 180ms ease;
   white-space: nowrap;
 }
 .btn-hero-primary:hover {
-  background: var(--coral-hover);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 .btn-hero-ghost {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 700;
+  font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 0.12em;
   background: transparent;
   color: var(--white);
-  border: 2px solid var(--white);
+  border: 2px solid rgba(255,255,255,0.7);
   height: 50px;
-  padding: 0 20px;
+  padding: 0 28px;
   border-radius: var(--radius-sm);
-  transition: background 180ms ease;
+  transition: background 180ms ease, border-color 180ms ease;
   white-space: nowrap;
 }
-.btn-hero-ghost:hover { background: rgba(255,255,255,0.15); }
-
-/* Badge (coral) half */
-.hero__badge {
-  background: var(--coral);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero__badge img {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  object-fit: cover;
-  mix-blend-mode: multiply;
-  filter: brightness(1.05) contrast(1.1);
+.btn-hero-ghost:hover {
+  background: rgba(255,255,255,0.15);
+  border-color: var(--white);
 }
 
-/* Mobile: stacked */
-@media (max-width: 767px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-  }
-  .hero__badge {
-    width: 100%;
-    height: 320px;
-    order: 1;
-    flex-shrink: 0;
-  }
-  .hero__photo {
-    width: 100%;
-    height: 360px;
-    order: 2;
-    flex-shrink: 0;
-  }
-  .hero__text { padding: 0 24px 32px; }
-  .hero__headline { font-size: 44px; }
-  .hero__ctas .btn-hero-primary,
-  .hero__ctas .btn-hero-ghost { width: 100%; }
-}
-
+/* Desktop: side-by-side with diagonal photo */
 @media (min-width: 768px) {
+  .hero {
+    display: block;
+    position: relative;
+    height: 100dvh;
+    min-height: 620px;
+    overflow: hidden;
+  }
+
+  /* Photo fills left 62%, diagonal cut on right edge */
+  .hero__photo {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 62%;
+    height: 100%;
+    max-height: none;
+    clip-path: polygon(0 0, 100% 0, 84% 100%, 0 100%);
+    z-index: 2;
+  }
+
+  /* Coral panel fills right side */
+  .hero__coral {
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 50%;
+    padding: 64px 56px;
+    align-items: flex-start;
+    justify-content: center;
+    z-index: 1;
+  }
+  .hero__coral-inner {
+    gap: 24px;
+    max-width: 380px;
+  }
+  .hero__logo-wrap {
+    width: 110px;
+    height: 110px;
+    padding: 8px;
+  }
+  .hero__headline {
+    font-size: 60px;
+  }
+  .hero__subhead {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 1200px) {
   .hero__headline { font-size: 72px; }
-  .hero__subhead { font-size: 20px; }
-  .hero__ctas { flex-direction: row; }
-  .hero__badge img { width: 360px; height: 360px; }
+  .hero__coral { padding: 64px 72px; }
+  .hero__logo-wrap { width: 130px; height: 130px; }
 }
 
 /* ================================================================
