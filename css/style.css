@@ -12,12 +12,13 @@
   --coral-hover:  #E84A24;
   --teal:         #00B4D8;
   --teal-dark:    #0096C7;
-  --sand:         #E4D9C7;
-  --white:        #FFFFFF;
+  --sand:         #BEA882;  /* medium warm tan -- section alt background */
+  --section-bg:   #F0E4D2;  /* warm cream -- section primary background */
+  --white:        #FFFFFF;  /* kept for nav, buttons, logo circle, inputs */
   --ink:          #1A1A1A;
-  --ink-muted:    #6B6560;
+  --ink-muted:    #5A5249;
   --gold:         #F5A623;
-  --card-border:  #E8E2D9;
+  --card-border:  #CCBAA0;
 
   --font-display: 'Oswald', sans-serif;
   --font-body:    'Lato', sans-serif;
@@ -479,7 +480,7 @@ ul  { list-style: none; }
   .section { padding: 80px 40px; }
 }
 
-.section--white { background: var(--white); }
+.section--white { background: var(--section-bg); }
 .section--sand  { background: var(--sand); }
 .section--coral { background: var(--coral); }
 .section--ink   { background: var(--ink); }
@@ -898,7 +899,7 @@ ul  { list-style: none; }
 
 .page-hero--coral { background: var(--coral); }
 .page-hero--sand  { background: var(--sand); }
-.page-hero--white { background: var(--white); }
+.page-hero--white { background: var(--section-bg); }
 
 .page-hero .sub-label {
   display: block;
