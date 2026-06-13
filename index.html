@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bottoms Up Yacht Club | Your Neighborhood Bar in Rocky Point, Mexico</title>
+  <meta name="description" content="Bottoms Up Yacht Club in Puerto Penasco, Mexico. Outdoor patio, fire pit, pool tables, and the best Bloody Marys in Rocky Point. Open 7 days a week.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/">
+  <meta property="og:title" content="Bottoms Up Yacht Club | Your Neighborhood Bar in Rocky Point, Mexico">
+  <meta property="og:description" content="Outdoor patio, fire pit, pool tables, and the best Bloody Marys in Rocky Point. Open 7 days a week in Puerto Penasco.">
+  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/interior_4.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ── LOADER ──────────────────────────────────────────── -->
+  <div id="loader" role="status" aria-label="Loading">
+    <div class="loader__badge">
+      <div class="loader__ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <circle cx="60" cy="60" r="56"/>
+        </svg>
+      </div>
+      <img src="assets/logo.jpg" alt="Bottoms Up Yacht Club logo">
+    </div>
+    <div class="loader__bar" aria-hidden="true"></div>
+  </div>
+
+  <!-- ── NAV ─────────────────────────────────────────────── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav__inner">
+      <a href="index.html" class="nav__brand" aria-label="Bottoms Up Yacht Club home">
+        <img src="assets/logo.jpg" alt="" class="nav__logo" aria-hidden="true">
+        <span class="nav__name">Bottom's Up Yacht Club</span>
+      </a>
+
+      <button id="hamburger" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav__links" id="navLinks" role="list">
+        <li><a href="about.html">About</a></li>
+        <li><a href="index.html#events">Events</a></li>
+        <li><a href="index.html#the-bar">The Bar</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="find-us.html">Find Us</a></li>
+        <li class="nav-cta"><a href="find-us.html#contact" class="btn btn--primary">Book a Party</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ── HERO ────────────────────────────────────────────── -->
+  <section id="hero" aria-label="Hero">
+    <div class="hero__bg">
+      <!-- interior_4.jpg: object-position targets the bottom-right panel (night patio) -->
+      <img
+        src="assets/interior_4.jpg"
+        alt="Bottoms Up Yacht Club outdoor patio at night with blue-purple uplighting, string lights, and palm silhouettes"
+        loading="eager"
+      >
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <!-- Ghost logo watermark -->
+    <div class="hero__watermark" aria-hidden="true">
+      <img src="assets/logo.jpg" alt="">
+    </div>
+
+    <div class="hero__content">
+      <span class="hero__eyebrow">Puerto Penasco, Mexico</span>
+      <h1 class="hero__headline">
+        <span class="hero__headline--line1">Bottom's Up</span>
+        <span class="hero__headline--line2">Yacht Club</span>
+      </h1>
+      <p class="hero__sub">Good attitudes, good vibes, and yeah -- the Bloody Marys are that good.</p>
+      <div class="hero__ctas">
+        <a href="find-us.html" class="btn btn--primary">Find Us</a>
+        <a href="menu.html" class="btn btn--ghost">See the Menu</a>
+      </div>
+    </div>
+
+    <div class="hero__scrollcue" aria-hidden="true">
+      <span>this is the place</span>
+      <svg viewBox="0 0 16 22" aria-hidden="true">
+        <path d="M8 1v16M2 13l6 6 6-6"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── INTRO BLURB ─────────────────────────────────────── -->
+  <section id="intro" aria-label="Introduction">
+    <div class="container">
+      <div class="intro__text appear">
+        <p>Rocky Point has a lot of bars. Bottoms Up is the one people come back to every weekend.</p>
+        <p>Outdoor patio. Fire pit. Pool tables. Cold drinks. And a staff that will know your name by your second visit. We're open seven days a week, and we're always happy to see you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HIGHLIGHTS ─────────────────────────────────────── -->
+  <section id="highlights" class="section section--dark" aria-label="Highlights">
+    <div class="container">
+      <span class="section-label appear">What We've Got</span>
+      <h2 class="section-heading appear">Your kind of place.</h2>
+      <div class="highlights__grid">
+
+        <div class="highlight-card appear appear--delay-1">
+          <div class="highlight-card__icon" aria-hidden="true">
+            <!-- Cocktail glass icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 22h8M12 22v-7M4 3h16l-8 12L4 3z"/>
+            </svg>
+          </div>
+          <h3 class="highlight-card__title">The Drinks</h3>
+          <p class="highlight-card__body">Bloody Marys. Mimosas. Coffee drinks. Cocktails that are actually good. No bad pours here.</p>
+        </div>
+
+        <div class="highlight-card appear appear--delay-2">
+          <div class="highlight-card__icon" aria-hidden="true">
+            <!-- Outdoor/umbrella icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M23 12a11 11 0 0 0-22 0z"/>
+              <path d="M12 12v9M8 21h8"/>
+            </svg>
+          </div>
+          <h3 class="highlight-card__title">The Patio</h3>
+          <p class="highlight-card__body">String lights. Blue sofas. A fire pit with a stage. The kind of outdoor space you didn't expect to find in Rocky Point. Come for one drink. Stay all afternoon.</p>
+        </div>
+
+        <div class="highlight-card appear appear--delay-3">
+          <div class="highlight-card__icon" aria-hidden="true">
+            <!-- Game/fun icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="2" y="7" width="20" height="14" rx="3"/>
+              <path d="M16 7V5a2 2 0 0 0-4 0v2M8 12h2m4 0h2M12 10v4"/>
+            </svg>
+          </div>
+          <h3 class="highlight-card__title">The Vibe</h3>
+          <p class="highlight-card__body">Pool tables. Giant Jenga. Foosball. Karaoke Thursdays. Chickin Sh*t Bingo on Saturdays. Conducive to work meetings, Mexican Train Dominoes, or meeting up with your buddies. Danny's words, not ours.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT / STORY (abbreviated on home) ────────────── -->
+  <section id="about" class="section section--warm" aria-label="Our Story">
+    <div class="container">
+      <div class="about__grid">
+        <div class="about__text">
+          <span class="section-label appear">The Story</span>
+          <h2 class="section-heading appear">Opened September 1, 2023. The day Jimmy Buffett died.</h2>
+          <div class="about__body appear">
+            <p>Danny Davis didn't plan it that way, but there's something right about it. His grandfather had been coming to Puerto Penasco since the 1960s. Danny grew up with Rocky Point in his blood and a Margaritaville tattoo to prove it. Opening a bar here wasn't a business plan. It was the next logical thing.</p>
+            <p>We've got a full indoor bar with a brick face and a bottle wall. A pool room for locals. A patio with blue sofas, string lights, and a fire pit stage where bands play on Fridays. Bilingual staff. Friendly to everyone. Open every day.</p>
+          </div>
+          <blockquote class="about__pullquote appear">
+            "We're a neighborhood bar -- a community center where everyone knows each other or feels at home."
+            <cite>Danny Davis, managing partner</cite>
+          </blockquote>
+          <a href="about.html" class="btn btn--ghost appear">Read the Full Story</a>
+        </div>
+        <div class="about__photo-wrap appear">
+          <img
+            src="assets/staff_2.jpg"
+            alt="Danny Davis behind the bar at Bottoms Up Yacht Club, arms raised, grinning while pouring drinks with the Puerto Penasco harbor mural behind him"
+            loading="lazy"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EVENTS ─────────────────────────────────────────── -->
+  <section id="events" class="section section--dark" aria-label="Weekly events">
+    <div class="container">
+      <span class="section-label appear">What's On</span>
+      <h2 class="section-heading appear">Every week. Always something.</h2>
+      <div class="events__grid">
+
+        <div class="event-card appear appear--delay-1">
+          <div class="event-card__icon" aria-hidden="true">
+            <!-- Microphone icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="9" y="2" width="6" height="11" rx="3"/>
+              <path d="M5 10a7 7 0 0 0 14 0M12 19v3M9 22h6"/>
+            </svg>
+          </div>
+          <h3 class="event-card__title">Thursday Karaoke</h3>
+          <p class="event-card__body">Thursdays at 7 PM with Tony Lake. Whether you can carry a tune or not, you're up.</p>
+        </div>
+
+        <div class="event-card appear appear--delay-2">
+          <div class="event-card__icon" aria-hidden="true">
+            <!-- Music note icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M9 18V5l12-2v13"/>
+              <circle cx="6" cy="18" r="3"/>
+              <circle cx="18" cy="16" r="3"/>
+            </svg>
+          </div>
+          <h3 class="event-card__title">Live Band Friday</h3>
+          <p class="event-card__body">Fridays -- live music at the fire pit stage. Outdoor patio, cold drinks, the whole deal.</p>
+        </div>
+
+        <div class="event-card appear appear--delay-3">
+          <div class="event-card__icon" aria-hidden="true">
+            <!-- Star/bingo icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <h3 class="event-card__title">Chickin Sh*t Bingo</h3>
+          <p class="event-card__body">Saturdays at 1 PM featuring Bocho. Rocky Point's most beloved Saturday tradition.</p>
+        </div>
+
+        <div class="event-card event-card--private appear appear--delay-4">
+          <div class="event-card__icon" aria-hidden="true">
+            <!-- Cake/celebrate icon -->
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/>
+              <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2 1 2 1"/>
+              <path d="M2 21h20M7 8v2M12 8v2M17 8v2M7 4l2 4M12 4l2 4M17 4l2 4"/>
+            </svg>
+          </div>
+          <h3 class="event-card__title">Private Events</h3>
+          <p class="event-card__body">Birthdays, group dinners, pub crawl stops -- this place does it all. Contact Danny at <a href="mailto:pony602boy@gmail.com" style="color:var(--primary)">pony602boy@gmail.com</a></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── THE BAR ─────────────────────────────────────────── -->
+  <section id="the-bar" class="section section--warm" aria-label="The Bar features">
+    <div class="container">
+      <span class="section-label appear">The Bar</span>
+      <h2 class="section-heading appear">More than you expected.</h2>
+
+      <div class="bar__icons">
+        <div class="bar-feature appear appear--delay-1">
+          <div class="bar-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M3 3l4 4m10 0l4-4M3 21l4-4m10 0l4 4"/>
+              <rect x="4" y="4" width="16" height="16" rx="2"/>
+            </svg>
+          </div>
+          <p class="bar-feature__label">Pool Room</p>
+          <p class="bar-feature__desc">The Locals Only Pool Room. You don't have to be a local. Just know how to play.</p>
+        </div>
+
+        <div class="bar-feature appear appear--delay-2">
+          <div class="bar-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <path d="M9 22V12h6v10"/>
+            </svg>
+          </div>
+          <p class="bar-feature__label">Outdoor Patio</p>
+          <p class="bar-feature__desc">Blue sofas, string lights, pergola shade. The best seat in Puerto Penasco.</p>
+        </div>
+
+        <div class="bar-feature appear appear--delay-3">
+          <div class="bar-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2z"/>
+              <path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <p class="bar-feature__label">Fire Pit Stage</p>
+          <p class="bar-feature__desc">Live bands Friday nights. Fire pit all week. The outdoor stage that snuck up on everyone.</p>
+        </div>
+
+        <div class="bar-feature appear appear--delay-4">
+          <div class="bar-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 22h8M12 22v-7M4 3h16l-8 12L4 3z"/>
+            </svg>
+          </div>
+          <p class="bar-feature__label">Full Bar</p>
+          <p class="bar-feature__desc">Bloody Marys, mimosas, cocktails, beer. Everything made right.</p>
+        </div>
+      </div>
+
+      <div class="bar__photos">
+        <div class="bar__photo-item appear appear--delay-1">
+          <!-- interior_2.jpg: object-position targets the blue cushion outdoor patio panel (top-right ish) -->
+          <img
+            src="assets/interior_2.jpg"
+            alt="Outdoor patio at Bottoms Up Yacht Club with royal blue cushioned sofas and pergola"
+            loading="lazy"
+            style="object-position: 75% 50%;"
+          >
+          <span class="bar__photo-caption">The Patio</span>
+        </div>
+        <div class="bar__photo-item appear appear--delay-2">
+          <img
+            src="assets/atmosphere_1.jpg"
+            alt="Group of guests at the bar at Bottoms Up Yacht Club, smiling and having a great time"
+            loading="lazy"
+          >
+          <span class="bar__photo-caption">The Bar</span>
+        </div>
+        <div class="bar__photo-item appear appear--delay-3">
+          <!-- interior_5.jpg: object-position targets the pool room panel (top-left) -->
+          <img
+            src="assets/interior_5.jpg"
+            alt="Locals Only Pool Room at Bottoms Up Yacht Club with green felt billiard table"
+            loading="lazy"
+            style="object-position: 0% 0%;"
+          >
+          <span class="bar__photo-caption">Locals Only Pool Room</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOD AND DRINKS PREVIEW ────────────────────────── -->
+  <section id="menu-preview" class="section section--dark" aria-label="Menu preview">
+    <div class="container">
+      <span class="section-label appear">On the Menu</span>
+      <h2 class="section-heading appear">Come for a drink. Stay for the egg rolls.</h2>
+
+      <div class="menu-preview__layout">
+        <div class="menu-preview__desc appear">
+          <p>Questionable life choices. Decent food. That's kind of our whole thing.</p>
+          <p>We're not pretending to be a restaurant. We're a bar. But the Bloody Marys are a reason to show up, and the egg roll special sells out for a reason. Come hungry.</p>
+          <a href="menu.html" class="menu-preview__link">See the full menu &rarr;</a>
+        </div>
+        <div class="menu-tiles appear">
+          <div class="menu-tile">
+            <p class="menu-tile__name">Bloody Marys</p>
+            <p class="menu-tile__desc">Our best seller. House-made, loaded, exactly what you need.</p>
+          </div>
+          <div class="menu-tile">
+            <p class="menu-tile__name">Mimosas</p>
+            <p class="menu-tile__desc">Classic. Fresh. Goes with everything.</p>
+          </div>
+          <div class="menu-tile">
+            <p class="menu-tile__name">Egg Roll Special</p>
+            <p class="menu-tile__desc">Daily. Our single best-selling food item. Order one.</p>
+          </div>
+          <div class="menu-tile">
+            <p class="menu-tile__name">Burgers</p>
+            <p class="menu-tile__desc">Honest burger. Done right.</p>
+          </div>
+          <div class="menu-tile">
+            <p class="menu-tile__name">Nachos</p>
+            <p class="menu-tile__desc">Loaded. The real kind.</p>
+          </div>
+          <div class="menu-tile">
+            <p class="menu-tile__name">Coffee Drinks</p>
+            <p class="menu-tile__desc">Hot, iced, spiked. We open early and the coffee drinks are why.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-preview__photos">
+        <div class="menu-preview__photo-item appear appear--delay-1">
+          <!-- dish_1.jpg: object-position targets the nachos panel (top-right) -->
+          <img
+            src="assets/dish_1.jpg"
+            alt="Loaded nachos with eggs and red salsa at Bottoms Up Yacht Club"
+            loading="lazy"
+            style="object-position: 100% 0%;"
+          >
+          <div class="menu-preview__photo-overlay" aria-hidden="true"></div>
+        </div>
+        <div class="menu-preview__photo-item appear appear--delay-2">
+          <!-- dish_2.jpg: object-position targets the club sandwich panel (top-left) -->
+          <img
+            src="assets/dish_2.jpg"
+            alt="Club sandwich basket with fries at Bottoms Up Yacht Club"
+            loading="lazy"
+            style="object-position: 0% 0%;"
+          >
+          <div class="menu-preview__photo-overlay" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── REVIEWS ────────────────────────────────────────── -->
+  <section id="reviews" class="section section--warm" aria-label="Customer reviews">
+    <div class="container">
+      <span class="section-label appear">What People Say</span>
+      <div class="reviews__rating appear">
+        <div>
+          <span class="rating__number">4.9</span><span class="rating__denom">/5</span>
+        </div>
+        <span class="rating__label">Across 170 Google Reviews</span>
+        <div class="rating__stars" aria-label="Five stars">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+      </div>
+
+      <div class="reviews__cards">
+        <div class="review-card appear appear--delay-1">
+          <p class="review-card__quote">"A great American bar with really good service and food to match. Friendly local vibe and welcoming for newcomers."</p>
+          <p class="review-card__name">Anthony Rodriguez</p>
+          <p class="review-card__source">Google Review</p>
+        </div>
+        <div class="review-card appear appear--delay-2">
+          <p class="review-card__quote">"Best bartenders ever! Fair prices and a lot of fun!!!"</p>
+          <p class="review-card__name">Susan Goeser</p>
+          <p class="review-card__source">Google Review</p>
+        </div>
+        <div class="review-card appear appear--delay-3">
+          <p class="review-card__quote">"Divertido y buen ambiente."</p>
+          <p class="review-card__name">Lic. Olayn Garcia</p>
+          <p class="review-card__source">Google Review</p>
+        </div>
+      </div>
+
+      <a href="https://maps.google.com/?q=Bottoms+Up+Yacht+Club+Puerto+Penasco+Sonora+Mexico" target="_blank" rel="noopener noreferrer" class="reviews__link appear">See all reviews on Google &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ── FIND US CTA ─────────────────────────────────────── -->
+  <section id="findus-cta" class="section section--dark" aria-label="Find us">
+    <div class="container">
+      <h2 class="findus-cta__heading appear">We're at Av. Chihuahua 141 in the Mirador neighborhood.</h2>
+      <p class="findus-cta__sub appear">Easy to find. Hard to leave.</p>
+      <div class="appear">
+        <a href="find-us.html" class="btn btn--primary">Find Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <img src="assets/logo.jpg" alt="Bottoms Up Yacht Club circular badge logo" class="footer__logo" loading="lazy">
+      <p class="footer__name">Bottom's Up Yacht Club</p>
+      <p class="footer__tagline">Your neighborhood bar in Mexico.</p>
+      <p class="footer__hours">Open daily. Mon&ndash;Thu 10 AM&ndash;10 PM. Fri&ndash;Sat 10 AM&ndash;11 PM.</p>
+      <p class="footer__contact"><a href="tel:+526386881617">638 688 1617</a></p>
+      <p class="footer__address">Av. Chihuahua 141, Puerto Pe&ntilde;asco, Son.</p>
+      <div class="footer__social">
+        <a href="https://www.facebook.com/BottomsUPYachtClub" target="_blank" rel="noopener noreferrer">Facebook: BottomsUPYachtClub</a>
+      </div>
+      <div class="footer__divider" aria-hidden="true"></div>
+      <p class="footer__meta">
+        Opened September 1, 2023 &middot; Puerto Pe&ntilde;asco, Mexico<br>
+        &copy; 2024 Bottom's Up Yacht Club<br>
+        <a href="https://neonframewebdesign.com" target="_blank" rel="noopener noreferrer">Site by NeonFrame Web Design</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
