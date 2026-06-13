@@ -8,17 +8,17 @@
 
 /* -- CSS Variables ---------------------------------------------- */
 :root {
-  --coral:        #FF5C35;
-  --coral-hover:  #E84A24;
-  --teal:         #00B4D8;
-  --teal-dark:    #0096C7;
-  --sand:         #BEA882;  /* medium warm tan -- section alt background */
-  --section-bg:   #F0E4D2;  /* warm cream -- section primary background */
-  --white:        #FFFFFF;  /* kept for nav, buttons, logo circle, inputs */
-  --ink:          #1A1A1A;
-  --ink-muted:    #5A5249;
-  --gold:         #F5A623;
-  --card-border:  #CCBAA0;
+  --coral:        #111111;  /* near-black -- hero panel, CTA bands, primary buttons */
+  --coral-hover:  #2D2D2D;  /* charcoal hover */
+  --teal:         #B8922E;  /* gold -- single warm accent: borders, icons, dividers */
+  --teal-dark:    #9A7A22;  /* deeper gold */
+  --sand:         #E0E0E0;  /* light gray -- alternating section background */
+  --section-bg:   #F7F7F7;  /* near-white -- primary section background */
+  --white:        #FFFFFF;  /* nav, buttons, logo circle, cards, inputs */
+  --ink:          #111111;
+  --ink-muted:    #666666;
+  --gold:         #F5A623;  /* star ratings only */
+  --card-border:  #CCCCCC;
 
   --font-display: 'Oswald', sans-serif;
   --font-body:    'Lato', sans-serif;
@@ -366,7 +366,7 @@ ul  { list-style: none; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   background: var(--white);
-  color: var(--coral);
+  color: var(--ink);
   height: 50px;
   padding: 0 28px;
   border-radius: var(--radius-sm);
@@ -783,7 +783,7 @@ ul  { list-style: none; }
   text-transform: uppercase;
   letter-spacing: 0.12em;
   background: var(--white);
-  color: var(--coral);
+  color: var(--ink);
   border-radius: var(--radius-sm);
   padding: 14px 32px;
   transition: background 180ms ease, transform 180ms ease;
