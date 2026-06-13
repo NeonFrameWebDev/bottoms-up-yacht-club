@@ -272,11 +272,25 @@ ul  { list-style: none; }
   flex-shrink: 0;
 }
 .hero__photo img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 25%;
   display: block;
+  z-index: 1; /* no-JS fallback, sits behind the dusk canvas */
+}
+/* Code-driven dusk scene -- paints over the fallback photo */
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 2;
+  /* gradient matches the canvas sky so there is no flash before paint */
+  background: linear-gradient(to bottom, #14102b 0%, #46295c 34%, #b65a4e 62%, #e8894a 83%, #f7c46b 100%);
 }
 
 .hero__coral {
@@ -1417,4 +1431,150 @@ ul  { list-style: none; }
   font-size: 17px;
   color: var(--ink);
   line-height: 1.6;
+}
+
+/* ================================================================
+   CHICKIN SH*T BINGO -- interactive board (js/bingo.js)
+   Black-and-gold feature: a hen waddles the grid and claims a square.
+   ================================================================ */
+.section--bingo {
+  background: var(--ink);
+  background-image:
+    radial-gradient(120% 80% at 50% -10%, rgba(184,146,46,0.16), transparent 60%);
+}
+.bingo-header { text-align: center; max-width: 640px; margin: 0 auto 36px; }
+.bingo-eyebrow { color: var(--teal); }
+.bingo-header h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--white);
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+@media (min-width: 768px) { .bingo-header h2 { font-size: 44px; } }
+.bingo-header p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.74);
+  line-height: 1.7;
+}
+
+.bingo-stage { max-width: 560px; margin: 0 auto; }
+
+/* The board: 5 x 4 grid of numbered squares, chicken layered on top */
+.bingo-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(184,146,46,0.35);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.25)),
+    #0c0c0c;
+  box-shadow: inset 0 0 40px rgba(0,0,0,0.6), 0 18px 50px rgba(0,0,0,0.45);
+}
+
+.bingo-sq {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(15px, 4.4vw, 22px);
+  color: rgba(245,232,200,0.62);
+  background: rgba(255,255,255,0.035);
+  border: 1px solid rgba(184,146,46,0.22);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease,
+              border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+.bingo-sq:hover { background: rgba(184,146,46,0.14); color: var(--white); }
+.bingo-sq:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+
+/* user's called number */
+.bingo-sq.is-picked {
+  border-color: var(--teal);
+  color: #ffe9a8;
+  box-shadow: 0 0 0 1px var(--teal) inset;
+}
+
+/* the winning square the hen claims */
+.bingo-sq.is-winner {
+  color: #1a1206;
+  background: radial-gradient(circle at 50% 40%, #ffe08a, #cf9e2c);
+  border-color: #ffe08a;
+  box-shadow: 0 0 22px rgba(255,210,110,0.65);
+  transform: scale(1.06);
+  animation: bingoPop 480ms ease;
+  z-index: 1;
+}
+@keyframes bingoPop {
+  0%   { transform: scale(0.9); }
+  55%  { transform: scale(1.14); }
+  100% { transform: scale(1.06); }
+}
+
+.bingo-caption {
+  text-align: center;
+  margin-top: 20px;
+  min-height: 1.5em;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.01em;
+  color: rgba(255,255,255,0.85);
+}
+.bingo-caption strong { color: var(--teal); }
+
+/* The chicken -- outer element handles glide between squares */
+.bingo-chicken {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  margin: -23px 0 0 -23px;       /* center on target point */
+  pointer-events: none;
+  z-index: 3;
+  transition: transform 1s cubic-bezier(0.45, 0, 0.25, 1);
+  will-change: transform;
+}
+/* inner element handles facing + waddle so it doesn't fight the glide */
+.bingo-chicken__inner {
+  width: 100%;
+  height: 100%;
+  transform-origin: 50% 90%;
+}
+.bingo-chicken__inner svg { width: 100%; height: 100%; display: block;
+  filter: drop-shadow(0 4px 5px rgba(0,0,0,0.5)); }
+.bingo-chicken.face-right .bingo-chicken__inner { transform: scaleX(-1); }
+.bingo-chicken.is-walking .bingo-chicken__inner { animation: hopWaddle 360ms ease-in-out infinite; }
+.bingo-chicken.face-right.is-walking .bingo-chicken__inner { animation: hopWaddleR 360ms ease-in-out infinite; }
+.bingo-chicken.is-pecking .bingo-chicken__inner { animation: peck 320ms ease; }
+
+@keyframes hopWaddle {
+  0%, 100% { transform: translateY(0) rotate(-4deg); }
+  50%      { transform: translateY(-4px) rotate(4deg); }
+}
+@keyframes hopWaddleR {
+  0%, 100% { transform: scaleX(-1) translateY(0) rotate(-4deg); }
+  50%      { transform: scaleX(-1) translateY(-4px) rotate(4deg); }
+}
+@keyframes peck {
+  0%, 100% { transform: rotate(0); }
+  40%      { transform: translateY(3px) rotate(10deg); }
+  70%      { transform: rotate(-3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bingo-chicken { transition: none; }
+  .bingo-chicken.is-walking .bingo-chicken__inner,
+  .bingo-chicken.face-right.is-walking .bingo-chicken__inner,
+  .bingo-chicken.is-pecking .bingo-chicken__inner { animation: none; }
+  .bingo-sq.is-winner { animation: none; }
 }

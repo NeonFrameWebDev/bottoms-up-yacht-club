@@ -50,9 +50,10 @@
        ============================================================ -->
   <section class="hero" aria-label="Hero">
 
-    <!-- Left: clean photo, no text overlay -->
+    <!-- Left: code-driven dusk scene (canvas), with real photo as no-JS fallback -->
     <div class="hero__photo">
       <img src="assets/atmosphere_1.jpg" alt="Group of friends at the bar at Bottom's Up Yacht Club">
+      <canvas id="duskCanvas" class="hero__canvas" aria-hidden="true"></canvas>
     </div>
 
     <!-- Right: coral content panel -->
@@ -182,6 +183,46 @@
   </section>
 
   <!-- ============================================================
+       CHICKIN SH*T BINGO -- interactive board
+       ============================================================ -->
+  <section class="section section--bingo" aria-label="Chickin Sh*t Bingo">
+    <div class="section__inner">
+      <header class="bingo-header appear">
+        <span class="section-label centered bingo-eyebrow">A Rocky Point Tradition</span>
+        <span class="teal-rule" aria-hidden="true" style="margin: 8px auto 18px;"></span>
+        <h2>Chickin Sh&#42;t Bingo</h2>
+        <p>Saturdays at 1 PM with Bocho and friends. Pick a square, place your bet, and let the hen decide where she lands. Tap a number to call it.</p>
+      </header>
+
+      <div class="bingo-stage appear">
+        <div class="bingo-board" id="bingoBoard" aria-label="Bingo board with a wandering chicken">
+          <button class="bingo-sq" type="button" data-n="1">1</button>
+          <button class="bingo-sq" type="button" data-n="2">2</button>
+          <button class="bingo-sq" type="button" data-n="3">3</button>
+          <button class="bingo-sq" type="button" data-n="4">4</button>
+          <button class="bingo-sq" type="button" data-n="5">5</button>
+          <button class="bingo-sq" type="button" data-n="6">6</button>
+          <button class="bingo-sq" type="button" data-n="7">7</button>
+          <button class="bingo-sq" type="button" data-n="8">8</button>
+          <button class="bingo-sq" type="button" data-n="9">9</button>
+          <button class="bingo-sq" type="button" data-n="10">10</button>
+          <button class="bingo-sq" type="button" data-n="11">11</button>
+          <button class="bingo-sq" type="button" data-n="12">12</button>
+          <button class="bingo-sq" type="button" data-n="13">13</button>
+          <button class="bingo-sq" type="button" data-n="14">14</button>
+          <button class="bingo-sq" type="button" data-n="15">15</button>
+          <button class="bingo-sq" type="button" data-n="16">16</button>
+          <button class="bingo-sq" type="button" data-n="17">17</button>
+          <button class="bingo-sq" type="button" data-n="18">18</button>
+          <button class="bingo-sq" type="button" data-n="19">19</button>
+          <button class="bingo-sq" type="button" data-n="20">20</button>
+        </div>
+        <p class="bingo-caption" id="bingoCaption" aria-live="polite">Let the hen wander&hellip;</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        REVIEWS
        ============================================================ -->
   <section class="section section--sand" aria-label="Customer reviews">
@@ -282,6 +323,8 @@
     </p>
   </footer>
 
+  <script src="js/dusk.js"></script>
+  <script src="js/bingo.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
