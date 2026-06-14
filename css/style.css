@@ -1201,27 +1201,29 @@ ul  { list-style: none; }
   object-position: center;
 }
 
-/* Three-up photo strip below bar (full width, no gaps) */
-.bar-photo-strip {
+/* Cinematic 2-panel bar strip */
+.bar-moment-strip {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr;
 }
-.bar-photo-strip__item {
-  height: 240px;
+.bar-moment-strip__panel {
+  position: relative;
+  height: 380px;
   overflow: hidden;
 }
-.bar-photo-strip__item img {
+.bar-moment-strip__panel img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
   display: block;
-  transition: transform 0.5s ease;
+  transition: transform 0.6s ease;
 }
-.bar-photo-strip__item:hover img { transform: scale(1.06); }
+.bar-moment-strip__panel:hover img { transform: scale(1.05); }
 @media (max-width: 767px) {
-  .bar-photo-strip { grid-template-columns: 1fr; }
-  .bar-photo-strip__item { height: 200px; }
+  .bar-moment-strip { grid-template-columns: 1fr; }
+  .bar-moment-strip__panel { height: 240px; }
 }
 
 /* Dark section for menu boards */
