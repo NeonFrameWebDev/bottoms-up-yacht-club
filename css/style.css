@@ -1098,19 +1098,19 @@ ul  { list-style: none; }
 
 .food-photos-row {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 .food-photos-row img {
   width: 100%;
-  height: 260px;
+  height: 340px;
   object-fit: contain;
   background: var(--sand);
   border-radius: var(--radius-lg);
 }
 @media (max-width: 767px) {
   .food-photos-row { grid-template-columns: 1fr; }
-  .food-photos-row img { height: 200px; }
+  .food-photos-row img { height: 240px; }
 }
 
 /* ================================================================
