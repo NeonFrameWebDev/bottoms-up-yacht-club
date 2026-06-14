@@ -1096,21 +1096,25 @@ ul  { list-style: none; }
   display: block;
 }
 
-.food-photos-row {
+.food-photo-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 40px;
 }
-.food-photos-row img {
+.food-photo-grid img {
   width: 100%;
-  height: 340px;
-  object-fit: contain;
-  background: var(--sand);
+  height: 280px;
+  object-fit: cover;
   border-radius: var(--radius-lg);
+  display: block;
 }
 @media (max-width: 767px) {
-  .food-photos-row { grid-template-columns: 1fr; }
-  .food-photos-row img { height: 240px; }
+  .food-photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .food-photo-grid img { height: 200px; }
+}
+@media (max-width: 479px) {
+  .food-photo-grid { grid-template-columns: 1fr; }
 }
 
 /* ================================================================
@@ -1318,27 +1322,6 @@ ul  { list-style: none; }
   transition: background 150ms;
 }
 .lightbox__close:hover { background: rgba(255,255,255,0.28); }
-
-/* Featured food pair (tacos + burritos) */
-.food-featured-pair {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin-bottom: 12px;
-}
-@media (min-width: 768px) { .food-featured-pair { grid-template-columns: 1fr 1fr; } }
-.food-featured-item {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  height: 340px;
-}
-.food-featured-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  background: var(--sand);
-  display: block;
-}
 
 /* Events table on menu */
 .menu-events-h2 {
