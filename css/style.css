@@ -1263,7 +1263,7 @@ ul  { list-style: none; }
   margin: 0 auto 10px;
 }
 @media (min-width: 768px) { .menu-boards-grid { grid-template-columns: repeat(3, 1fr); } }
-.menu-boards-grid--two { max-width: 680px; align-items: start; }
+.menu-boards-grid--two { max-width: 680px; align-items: center; }
 @media (min-width: 768px) { .menu-boards-grid--two { grid-template-columns: repeat(2, 1fr); } }
 .menu-board-item {
   border-radius: var(--radius-md);
