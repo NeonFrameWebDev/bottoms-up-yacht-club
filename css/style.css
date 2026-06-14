@@ -1104,7 +1104,8 @@ ul  { list-style: none; }
 .food-photos-row img {
   width: 100%;
   height: 260px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--sand);
   border-radius: var(--radius-lg);
 }
 @media (max-width: 767px) {
@@ -1334,8 +1335,8 @@ ul  { list-style: none; }
 .food-featured-item img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  background: var(--sand);
   display: block;
 }
 
