@@ -702,9 +702,12 @@ ul  { list-style: none; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--coral);
-  display: block;
-  margin-bottom: 6px;
+  color: #fff;
+  background: var(--coral);
+  display: inline-block;
+  padding: 3px 9px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 }
 .event-photo-card__text h3 {
   font-family: var(--font-display);
@@ -727,7 +730,7 @@ ul  { list-style: none; }
   line-height: 1.6;
 }
 .events-private-note a {
-  color: var(--coral);
+  color: #fff;
   text-decoration: underline;
   text-underline-offset: 2px;
 }
