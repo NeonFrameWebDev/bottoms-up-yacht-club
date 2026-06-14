@@ -1614,6 +1614,23 @@ ul  { list-style: none; }
 }
 @media (max-width: 767px) { .about-photo { height: 300px; } }
 
+.about-photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.about-photo-pair img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+@media (max-width: 639px) {
+  .about-photo-pair { grid-template-columns: 1fr; }
+  .about-photo-pair img { height: 280px; }
+}
+
 /* What It Is */
 .about-what-it-is {
   max-width: 780px;
