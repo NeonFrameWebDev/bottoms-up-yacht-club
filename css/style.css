@@ -1208,7 +1208,7 @@ ul  { list-style: none; }
 }
 .bar-moment-strip__panel {
   position: relative;
-  height: 380px;
+  height: 500px;
   overflow: hidden;
 }
 .bar-moment-strip__panel img {
