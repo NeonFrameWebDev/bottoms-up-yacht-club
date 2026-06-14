@@ -93,32 +93,82 @@
     });
   }
 
-  /* -- Menu board lightbox --------------------------------------- */
+  /* -- Lightbox (menu boards + gallery with prev/next) ---------- */
   const lightbox      = document.getElementById('lightbox');
   const lightboxImg   = document.getElementById('lightboxImg');
   const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev  = document.getElementById('lightboxPrev');
+  const lightboxNext  = document.getElementById('lightboxNext');
+  const lightboxCounter = document.getElementById('lightboxCounter');
 
   if (lightbox && lightboxImg) {
-    function openLightbox(src, alt) {
+    let galleryImgs = [];
+    let currentIdx  = -1;
+
+    function openLightbox(src, alt, imgs, idx) {
       lightboxImg.src = src;
-      lightboxImg.alt = alt;
+      lightboxImg.alt = alt || '';
+      galleryImgs = imgs || [];
+      currentIdx  = idx !== undefined ? idx : -1;
+      const hasNav = galleryImgs.length > 1;
+      if (lightboxPrev)   lightboxPrev.style.display   = hasNav ? 'flex' : 'none';
+      if (lightboxNext)   lightboxNext.style.display   = hasNav ? 'flex' : 'none';
+      if (lightboxCounter) {
+        lightboxCounter.textContent = hasNav ? `${currentIdx + 1} / ${galleryImgs.length}` : '';
+        lightboxCounter.style.display = hasNav ? 'block' : 'none';
+      }
       lightbox.classList.add('is-open');
       document.body.style.overflow = 'hidden';
     }
+
     function closeLightbox() {
       lightbox.classList.remove('is-open');
       lightboxImg.src = '';
       document.body.style.overflow = '';
+      galleryImgs = [];
+      currentIdx  = -1;
     }
-    document.querySelectorAll('.menu-board-item img').forEach(img => {
-      img.addEventListener('click', () => openLightbox(img.src, img.alt));
+
+    function showPrev() {
+      if (!galleryImgs.length) return;
+      currentIdx = (currentIdx - 1 + galleryImgs.length) % galleryImgs.length;
+      lightboxImg.src = galleryImgs[currentIdx].src;
+      lightboxImg.alt = galleryImgs[currentIdx].alt || '';
+      if (lightboxCounter) lightboxCounter.textContent = `${currentIdx + 1} / ${galleryImgs.length}`;
+    }
+
+    function showNext() {
+      if (!galleryImgs.length) return;
+      currentIdx = (currentIdx + 1) % galleryImgs.length;
+      lightboxImg.src = galleryImgs[currentIdx].src;
+      lightboxImg.alt = galleryImgs[currentIdx].alt || '';
+      if (lightboxCounter) lightboxCounter.textContent = `${currentIdx + 1} / ${galleryImgs.length}`;
+    }
+
+    /* Gallery photos — with prev/next */
+    const galleryList = Array.from(document.querySelectorAll('.gallery-m-item img'));
+    galleryList.forEach((img, i) => {
+      img.addEventListener('click', () => openLightbox(img.src, img.alt, galleryList, i));
     });
+
+    /* Menu board photos — single view, no prev/next */
+    document.querySelectorAll('.menu-board-item img').forEach(img => {
+      img.addEventListener('click', () => openLightbox(img.src, img.alt, [], -1));
+    });
+
     lightboxClose.addEventListener('click', closeLightbox);
+    if (lightboxPrev) lightboxPrev.addEventListener('click', showPrev);
+    if (lightboxNext) lightboxNext.addEventListener('click', showNext);
+
     lightbox.addEventListener('click', e => {
       if (e.target === lightbox) closeLightbox();
     });
+
     document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
+      if (!lightbox.classList.contains('is-open')) return;
+      if (e.key === 'Escape')      closeLightbox();
+      if (e.key === 'ArrowLeft')   showPrev();
+      if (e.key === 'ArrowRight')  showNext();
     });
   }
 

@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery - Bottom's Up Yacht Club | Puerto Penasco, Mexico</title>
-  <meta name="description" content="Take a look inside Bottom's Up Yacht Club in Rocky Point. The patio at night, the bar, the food, the people. This is the real place.">
+  <meta name="description" content="Take a look inside Bottom's Up Yacht Club in Rocky Point. The patio at night, the bar, the people, the games. This is the real place.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Gallery - Bottom's Up Yacht Club">
   <meta property="og:description" content="Photos from inside Bottom's Up Yacht Club in Rocky Point. The patio, the bar, the food, and the people who keep coming back.">
-  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/atmosphere_1.jpg">
+  <meta property="og:image" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/assets/gallery_bar_crew.jpg">
   <meta property="og:url" content="https://neonframewebdev.github.io/bottoms-up-yacht-club/gallery.html">
   <meta property="og:type" content="website">
 
@@ -42,63 +42,55 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <header class="page-hero page-hero--sand" aria-label="Gallery page header">
-    <h1>Take a look around.</h1>
-    <p>The patio at night, the bar at full swing, the food people talk about. This is what you'll find when you come in.</p>
+  <!-- GALLERY HERO -->
+  <header class="gallery-hero" aria-label="Gallery page header">
+    <div class="gallery-hero__inner appear">
+      <span class="section-label gallery-hero__label">Photos</span>
+      <h1>A look inside Bottom's Up.</h1>
+      <p>The bar, the patio, the games, and the people who keep coming back.</p>
+    </div>
   </header>
 
-  <!-- GALLERY GRID -->
-  <section class="section section--white" aria-label="Photo gallery">
-    <div class="section__inner">
-      <div class="gallery-grid">
+  <!-- MASONRY GALLERY -->
+  <section class="gallery-section" aria-label="Photo gallery">
+    <div class="gallery-masonry" id="galleryMasonry" role="list">
 
-        <figure class="gallery-item appear">
-          <img src="assets/dish_3.jpg" alt="Steak and eggs with fries and a Bottoms Up mug" loading="lazy">
-          <figcaption class="gallery-caption">Steak &amp; Eggs</figcaption>
-        </figure>
-
-        <figure class="gallery-item appear">
-          <img src="assets/dish_4.jpg" alt="Deli sandwich with coleslaw on checkered paper" loading="lazy">
-          <figcaption class="gallery-caption">Deli Sandwich</figcaption>
-        </figure>
-
-        <figure class="gallery-item appear">
-          <img src="assets/dish_5.jpg" alt="Burger with fries and a glass of white wine" loading="lazy">
-          <figcaption class="gallery-caption">The Burger</figcaption>
-        </figure>
-
-        <figure class="gallery-item appear">
-          <img src="assets/dish_6.jpg" alt="Pozole in a clay bowl with crackers and white wine" loading="lazy">
-          <figcaption class="gallery-caption">Pozole</figcaption>
-        </figure>
-
-        <figure class="gallery-item appear">
-          <img src="assets/dish_7.jpg" alt="Burritos with dipping sauce on checkered paper" loading="lazy">
-          <figcaption class="gallery-caption">Burritos</figcaption>
-        </figure>
-
-        <figure class="gallery-item appear">
-          <img
-            src="assets/dish_1.jpg"
-            alt="Loaded nachos with eggs and red salsa"
-            style="object-fit: cover; object-position: 0% 100%;"
-            loading="lazy"
-          >
-          <figcaption class="gallery-caption">Bar Bites</figcaption>
-        </figure>
-
-        <figure class="gallery-item appear">
-          <img
-            src="assets/dish_2.jpg"
-            alt="Club sandwich basket with fries"
-            style="object-fit: cover; object-position: 0% 0%;"
-            loading="lazy"
-          >
-          <figcaption class="gallery-caption">The Club</figcaption>
-        </figure>
-
+      <div class="gallery-m-item appear" role="listitem">
+        <img src="assets/gallery_bar_interior.jpg" alt="Bar interior at Bottom's Up Yacht Club with TVs and bar stools" loading="lazy">
       </div>
+
+      <div class="gallery-m-item appear d-1" role="listitem">
+        <img src="assets/event_live_band.jpg" alt="Live band performing on stage at Bottom's Up Yacht Club" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear d-2" role="listitem">
+        <img src="assets/gallery_bar_crew.jpg" alt="The crew behind the bar at Bottom's Up Yacht Club during happy hour" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear" role="listitem">
+        <img src="assets/gallery_bar_close.jpg" alt="View down the bar at Bottom's Up with a Bloody Mary and merchandise" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear d-1" role="listitem">
+        <img src="assets/event_patio.jpg" alt="Friends gathered on the patio at night at Bottom's Up Yacht Club" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear d-2" role="listitem">
+        <img src="assets/gallery_welcome_bar.jpg" alt="Customers at the bar with the Welcome to the Patio sign" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear" role="listitem">
+        <img src="assets/gallery_game_room.jpg" alt="Foosball table and basketball hoop in the game room at Bottom's Up" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear d-1" role="listitem">
+        <img src="assets/gallery_patio_door.jpg" alt="Welcome to the Patio hand-lettered sign at Bottom's Up Yacht Club" loading="lazy">
+      </div>
+
+      <div class="gallery-m-item appear d-2" role="listitem">
+        <img src="assets/event_bingo.jpg" alt="Chickin Sh*t Bingo winner with Danny at Bottom's Up Yacht Club" loading="lazy">
+      </div>
+
     </div>
   </section>
 
@@ -142,6 +134,15 @@
       <a href="https://neonframewebdesign.com" target="_blank" rel="noopener">Site by NeonFrame Web Design</a>
     </p>
   </footer>
+
+  <!-- GALLERY LIGHTBOX -->
+  <div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Photo enlarged">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&times;</button>
+    <button class="lightbox__prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+    <img class="lightbox__img" id="lightboxImg" src="" alt="">
+    <button class="lightbox__next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+    <span class="lightbox__counter" id="lightboxCounter"></span>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
