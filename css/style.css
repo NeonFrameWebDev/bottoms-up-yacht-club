@@ -206,10 +206,10 @@ ul  { list-style: none; }
 #hamburger.active span:nth-child(2) { opacity: 0; }
 #hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Desktop: hide mobile-only CTA in nav list */
-@media (min-width: 768px) {
-  .nav-mobile-cta { display: none; }
-}
+/* "Find Us" is already a link in the drawer, so this extra full-width CTA
+   button (near-black in this palette) just read as a stray black bar in the
+   mobile menu. Hide the duplicate at every width. */
+.nav-mobile-cta { display: none; }
 
 /* Mobile nav */
 @media (max-width: 767px) {
